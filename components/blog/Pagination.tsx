@@ -1,5 +1,7 @@
 'use client';
 
+import { useMemo } from "react";
+
 export default function Pagination({
   currentPage,
   totalPages,
@@ -11,8 +13,11 @@ export default function Pagination({
 }) {
   if (totalPages <= 1) return null;
 
-  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
-
+  // const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+const pageNumbers = useMemo(
+  () => Array.from({ length: totalPages }, (_, i) => i + 1),
+  [totalPages]
+);
   return (
     <div className="flex justify-center gap-2 mt-12">
       <button

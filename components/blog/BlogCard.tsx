@@ -21,12 +21,12 @@ export default function BlogCard({
               className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
             /> */}
             <Image
-              src={post.image || "/fallback.jpg"}
+              src={post.image}
               alt={post.title}
               fill
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover"
-              quality={70}
+              priority={false}
             />
           </div>
         )}
