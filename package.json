@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prebuild": "node scripts/generate-manifest.js",
     "build:export": "next build && next export"
   },
   "dependencies": {
