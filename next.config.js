@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // ← Enables static HTML export
+  // output: "export", // ← Enables static HTML export
 
   images: {
     // domains is deprecated in newer Next.js; use remotePatterns instead
@@ -15,7 +15,7 @@ const nextConfig = {
       },
     ],
     formats: ["image/avif", "image/webp"],
-    unoptimized: true, // Required for static export when using next/image
+    // unoptimized: true, // Required for static export when using next/image
   },
 
   compress: true,
