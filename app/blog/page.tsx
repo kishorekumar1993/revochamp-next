@@ -1,61 +1,51 @@
-import { fetchBlogPage, fetchCategoryPage } from "@/lib/blog-service";
-import BlogListClient from "./BlogListClient";
-import { BlogSummary } from "@/types/blog";
-import { BlogStructuredDataList } from "@/components/blog/BlogStructuredData";
+import { Suspense } from 'react';
+import BlogListClient from './BlogListClient';
+import { BlogStructuredDataList } from '@/components/blog/BlogStructuredData';
+import { getMinimalBlogList } from '@/lib/blog-service'; // new helper
 
 interface PageProps {
   searchParams?: Promise<{ page?: string; category?: string; q?: string }>;
 }
 
+// Server component: only fetches minimal data for structured data (titles + slugs)
 export default async function BlogPage({ searchParams }: PageProps) {
   const params = await searchParams || {};
-
-  const page = parseInt(params.page || "1");
   const category = params.category || null;
-  const query = params.q || "";
 
-  let initialPosts: BlogSummary[] = [];
-  let totalPages = 1;
-
+  // Fetch only what's needed for schema: titles, slugs, and maybe dates
+  // This is a lightweight API call, not the full post content.
+  let minimalPosts: { slug: string; title: string; date: string; }[] = [];
   try {
-    let response;
-    if (category && category !== "All") {
-      response = await fetchCategoryPage(category.toLowerCase(), page);
-    } else {
-      response = await fetchBlogPage(page);
-    }
-    initialPosts = response?.data || [];
-    totalPages = response?.totalPages || 1;
+    minimalPosts = await getMinimalBlogList(category); // returns { slug, title, date }[]
   } catch (err) {
-    console.error("Blog fetch failed:", err);
+    console.error('Failed to fetch minimal blog list for schema:', err);
   }
 
   return (
     <>
-      <BlogStructuredDataList posts={initialPosts} />
+      {/* Structured data uses only minimal data – no heavy content */}
+      <BlogStructuredDataList posts={minimalPosts} />
+      {/* Client component will fetch actual posts on mount */}
       <BlogListClient
-        initialPosts={initialPosts}
-        initialPage={page}
-        totalPages={totalPages}
         initialCategory={category}
-        initialQuery={query}
+        initialQuery={params.q || ''}
+        initialPage={parseInt(params.page || '1')}
       />
     </>
   );
 }
-// // app/blog/page.tsx
+
+
 // import { fetchBlogPage, fetchCategoryPage } from "@/lib/blog-service";
 // import BlogListClient from "./BlogListClient";
 // import { BlogSummary } from "@/types/blog";
 // import { BlogStructuredDataList } from "@/components/blog/BlogStructuredData";
 
-// // ✅ Correct type for Next.js 15
 // interface PageProps {
 //   searchParams?: Promise<{ page?: string; category?: string; q?: string }>;
 // }
 
 // export default async function BlogPage({ searchParams }: PageProps) {
-//   // ✅ await the promise
 //   const params = await searchParams || {};
 
 //   const page = parseInt(params.page || "1");
@@ -91,53 +81,3 @@ export default async function BlogPage({ searchParams }: PageProps) {
 //     </>
 //   );
 // }
-
-// // import { fetchBlogPage, fetchCategoryPage } from "@/lib/blog-service";
-// // import BlogListClient from "./BlogListClient";
-// // import { BlogSummary } from "@/types/blog";
-// // import { BlogStructuredDataList } from "@/components/blog/BlogStructuredData";
-
-// // // No revalidate, no dynamic – this page will be fully static
-// // interface PageProps {
-// //   searchParams?: { page?: string; category?: string; q?: string };
-// // }
-
-// // export default async function BlogPage({ searchParams }: PageProps) {
-// //   const params = searchParams; // ✅ NO await, NO Promise
-
-// //   const page = parseInt(params?.page || "1");
-// //   const category = params?.category || null;
-// //   const query = params?.q || "";
-
-// //   let initialPosts: BlogSummary[] = [];
-// //   let totalPages = 1;
-
-// //   try {
-// //     let response;
-// //     if (category && category !== "All") {
-// //       response = await fetchCategoryPage(category.toLowerCase(), page);
-// //     } else {
-// //       response = await fetchBlogPage(page);
-// //     }
-// //     initialPosts = response?.data || [];
-// //     totalPages = response?.totalPages || 1;
-// //   } catch (err) {
-// //     console.error("Blog fetch failed:", err);
-// //   }
-
-// //   return (
-// //     <>
-// //       {/* ✅ Schema only once (SERVER SIDE) */}
-// //       <BlogStructuredDataList posts={initialPosts} />
-
-// //       {/* ✅ Client UI */}
-// //       <BlogListClient
-// //         initialPosts={initialPosts}
-// //         initialPage={page}
-// //         totalPages={totalPages}
-// //         initialCategory={category}
-// //         initialQuery={query}
-// //       />
-// //     </>
-// //   );
-// // }

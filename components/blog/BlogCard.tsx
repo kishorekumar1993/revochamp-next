@@ -1,3 +1,28 @@
+// // components/blog/BlogCard.tsx
+// import { BlogSummary } from '@/types/blog';
+// import Image from 'next/image';
+
+// export default function BlogCard({ post, featured }: { post: BlogSummary; featured?: boolean }) {
+//   return (
+//     <article className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+//       <div className="relative w-full aspect-[16/9]">   {/* fixed aspect ratio */}
+//         <Image
+//           src={post.image || '/fallback.jpg'}
+//           alt={post.title}
+//           fill
+//           className="object-cover"
+//           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+//           loading={featured ? 'eager' : 'lazy'}
+//         />
+//       </div>
+//       <div className="p-6">
+//         <h2 className="font-serif text-xl font-bold line-clamp-2">{post.title}</h2>
+//         <p className="text-muted mt-2 line-clamp-3">{post.category}</p>
+//       </div>
+//     </article>
+//   );
+// }
+
 "use client";
 import Link from "next/link";
 import { BlogSummary } from "@/types/blog";

@@ -8,6 +8,21 @@ const CATEGORY_URL = (category: string, page: number) =>
   `${BASE_URL}/category/${category}/page-${page}.json`;
 const SINGLE_POST_URL = (slug: string) => `${BASE_URL}/${slug}.json`;
 
+export async function getMinimalBlogList(category: string | null): Promise<{ slug: string; title: string; date: string }[]> {
+  // Fetch from your JSON endpoint but only extract needed fields
+  const url = category && category !== 'All'
+    ? `https://json.revochamp.site/blog/category/${category.toLowerCase()}/page-1.json`
+    : `https://json.revochamp.site/blog/page/page-1.json`;
+  const res = await fetch(url, { next: { revalidate: 3600 } }); // ISR
+  const data = await res.json();
+  const posts = Array.isArray(data) ? data : data.data || [];
+  return posts.map((p: any) => ({
+    slug: p.slug,
+    title: p.title,
+    date: p.date,
+  }));
+}
+
 async function safeFetch<T>(url: string, fallback: T): Promise<T> {
   try {
     console.log(`[safeFetch] ${url}`);
