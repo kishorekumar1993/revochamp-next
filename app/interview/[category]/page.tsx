@@ -124,7 +124,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // ✅ fetchTopics already uses revalidate: 60 (updated in lib)
     const topics = await fetchTopics(categorySlug);
     const popularTopics = topics.slice(0, 5).map((t) => t.title);
-    const title = `${displayCategory} Mock Interview Tests | RevoChamp`;
+    const title = `${displayCategory} Mock Interview Tests `;
     const description = `Prepare for ${displayCategory} interviews with ${topics.length}+ tests. Practice ${popularTopics
       .slice(0, 3)
       .join(', ')}. Free AI feedback.`;

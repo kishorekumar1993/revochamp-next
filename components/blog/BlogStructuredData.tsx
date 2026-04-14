@@ -16,6 +16,9 @@ import { BlogSummary, BlogPost } from '@/types/blog';
 //   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />;
 // }
 export function BlogStructuredDataList({ posts }: { posts: BlogSummary[] }) {
+    if (!posts || posts.length === 0) return null; // ✅ prevent empty duplicate
+
+
   const itemListElement = posts.map((post, idx) => ({
     '@type': 'ListItem',
     position: idx + 1,
@@ -30,7 +33,7 @@ export function BlogStructuredDataList({ posts }: { posts: BlogSummary[] }) {
   };
   return (
     <script
-      key="blog-itemlist-schema"   // <-- ADD THIS LINE
+      id="blog-itemlist-schema"   // <-- ADD THIS LINE
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />

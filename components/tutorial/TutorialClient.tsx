@@ -11,6 +11,7 @@ import { analytics } from "@/lib/analytics";
 import ReactMarkdown from "react-markdown";
 import { motion, AnimatePresence } from "framer-motion";
 import CodeEditor from "./CodeEditor";
+import TableOfContents from "./SideTable";
 
 interface TutorialClientProps {
   initialData: TutorialData;
@@ -145,6 +146,7 @@ export default function TutorialClient({
     [quizSubmitted, slug]
   );
 
+  
   const submitQuiz = () => {
     if (quizStates.some(s => s.selectedAnswer === null)) {
       setError("Please answer all questions before submitting.");
@@ -420,86 +422,13 @@ export default function TutorialClient({
 
       {/* Main layout */}
       <div className="flex max-w-[1800px] mx-auto">
-        {/* Left Sidebar – Table of Contents */}
-      
-<aside className="hidden lg:block w-80 flex-shrink-0 sticky top-20 h-fit max-h-[calc(100vh-8rem)] px-4">
-      <div className="bg-white/60 backdrop-blur-xl border border-gray-200/50 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden">
-        
-        {/* Top Progress Header */}
-        <div className="p-6 pb-2">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex-1 h-1 bg-gray-100 rounded-full overflow-hidden">
-              <motion.div 
-                className="h-full bg-gradient-to-r from-blue-500 to-indigo-600"
-                animate={{ width: `${scrollProgress}%` }}
-              />
-            </div>
-            <span className="text-[10px] font-bold text-gray-400 tabular-nums">
-              {Math.round(scrollProgress)}%
-            </span>
-          </div>
-          
-          <h3 className="text-[11px] font-black text-gray-800 uppercase tracking-widest flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
-            Table of Contents
-          </h3>
-        </div>
-
-        {/* Navigation Area */}
-        <nav className="p-3 relative">
-          <div className="space-y-1 relative">
-            {headings.map((heading) => {
-              const isActive = activeHeadingId === heading.id;
-              
-              return (
-                <button
-                  key={heading.id}
-                  onClick={() => scrollToHeading(heading.id)}
-                  className={`relative w-full flex items-center py-2.5 px-4 text-sm rounded-xl transition-all duration-300 group ${
-                    isActive ? "text-blue-700" : "text-gray-500 hover:text-gray-900"
-                  }`}
-                >
-                  {/* Background Highlight Pill */}
-                  {isActive && (
-                    <motion.div
-                      layoutId="active-pill"
-                      className="absolute inset-0 bg-blue-50/80 border border-blue-100/50 rounded-xl -z-10"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
-                  )}
-
-                  {/* Left Line Indicator */}
-                  <span className={`mr-3 w-1 h-1 rounded-full transition-all duration-300 ${
-                    isActive ? "bg-blue-500 scale-150" : "bg-gray-300 group-hover:bg-gray-400"
-                  }`} />
-                  
-                  <span className={`truncate ${isActive ? "font-bold" : "font-medium"}`}>
-                    {heading.text}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </nav>
-
-        {/* Dynamic Footer Info */}
-        <div className="bg-gray-50/80 p-5 border-t border-gray-100">
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col">
-              <span className="text-[10px] text-gray-400 uppercase font-bold tracking-tight">Est. Reading</span>
-              <span className="text-xs font-bold text-gray-700">{data.readTime || "5 min"}</span>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-gray-200 shadow-sm">
-                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </aside>
-
-
+<TableOfContents 
+  headings={headings} 
+  activeHeadingId={activeHeadingId} 
+  scrollProgress={scrollProgress} 
+  data={data} 
+  scrollToHeading={scrollToHeading} 
+/>
         {/* Main Content */}
         <main ref={scrollRef} className="flex-1 min-w-0 overflow-y-auto bg-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
