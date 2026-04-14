@@ -11,9 +11,15 @@
 //   fallback: ['system-ui', 'arial'],
 // });
 
-// // Force static generation with ISR (revalidate every hour)
-// export const dynamic = 'force-static';
-// export const revalidate = 3600;
+// // ❌ REMOVED – These caused the build error because they used conditionals.
+// // Next.js requires static string values for these exports.
+// // export const dynamic = process.env.NODE_ENV === 'production' ? 'force-static' : 'auto';
+// // export const revalidate = process.env.NODE_ENV === 'production' ? 3600 : undefined;
+
+// // ✅ If you need static generation in production, you can set them as plain strings:
+// // export const dynamic = 'force-static';
+// // export const revalidate = 3600;
+// // But for now, removing them fixes the development error.
 
 // // Viewport configuration
 // export const viewport: Viewport = {
@@ -153,10 +159,7 @@
 //   // Icons
 //   icons: {
 //     icon: [
-//       // { url: '/favicon.png', type: 'image/png', },
-//       // { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
-//       // { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
-//     { url: '/favicon.png?v=2', type: 'image/png' },
+//       { url: '/favicon.png?v=2', type: 'image/png' },
 //     ],
 //     apple: [{ url: '/apple-icon-180.png', sizes: '180x180', type: 'image/png' }],
 //     shortcut: ['/shortcut-icon.png'],
@@ -237,7 +240,6 @@
 //   return (
 //     <html lang="en" className={inter.variable}>
 //       <head>
-//         {/* Add this line */}
 //         <link
 //           href="https://fonts.googleapis.com/icon?family=Material+Icons"
 //           rel="stylesheet"
@@ -251,7 +253,7 @@
 //           dangerouslySetInnerHTML={{
 //             __html: `
 //               (function() {
-//                 var attrs = ['fdprocessedid'];
+//                 var attrs = ['fdprocessedid', 'data-extension-version'];
 //                 function clean() {
 //                   attrs.forEach(function(attr) {
 //                     document.querySelectorAll('[' + attr + ']').forEach(function(el) {
@@ -277,9 +279,19 @@
 //             `,
 //           }}
 //         />
-//         {/* Your existing JSON‑LD scripts (they can stay afterInteractive) */}
-//         <Script id="organization-schema" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-//         <Script id="website-schema" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+//         {/* Your existing JSON‑LD scripts */}
+//         <Script
+//           id="organization-schema"
+//           type="application/ld+json"
+//           strategy="afterInteractive"
+//           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+//         />
+//         <Script
+//           id="website-schema"
+//           type="application/ld+json"
+//           strategy="afterInteractive"
+//           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+//         />
 //         {children}
 //       </body>
 //     </html>

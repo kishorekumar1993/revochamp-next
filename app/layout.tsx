@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
-import './globals.css';
+// import './globals.css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -11,17 +11,6 @@ const inter = Inter({
   fallback: ['system-ui', 'arial'],
 });
 
-// ❌ REMOVED – These caused the build error because they used conditionals.
-// Next.js requires static string values for these exports.
-// export const dynamic = process.env.NODE_ENV === 'production' ? 'force-static' : 'auto';
-// export const revalidate = process.env.NODE_ENV === 'production' ? 3600 : undefined;
-
-// ✅ If you need static generation in production, you can set them as plain strings:
-// export const dynamic = 'force-static';
-// export const revalidate = 3600;
-// But for now, removing them fixes the development error.
-
-// Viewport configuration
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -31,21 +20,16 @@ export const viewport: Viewport = {
   colorScheme: 'light',
 };
 
-// Base URL for production
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://revochamp.site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-
-  // Basic SEO
   title: {
     default: 'RevoChamp - Free Programming Courses & Tech Learning Platform',
     template: '%s | RevoChamp',
   },
   description:
     'Learn Flutter, React, Backend, DevOps, AI and more with RevoChamp. Free online programming courses designed for developers. Start your tech career today!',
-
-  // Keywords
   keywords: [
     'free programming courses',
     'learn coding online',
@@ -68,10 +52,7 @@ export const metadata: Metadata = {
     'software development',
     'computer science',
   ],
-
   authors: [{ name: 'RevoChamp', url: BASE_URL }],
-
-  // Robots configuration
   robots: {
     index: true,
     follow: true,
@@ -83,13 +64,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-
-  // Verification - Replace with actual codes
   verification: {
     google: process.env.GOOGLE_VERIFICATION_CODE || 'your-google-verification-code',
   },
-
-  // Canonical URL
   alternates: {
     canonical: BASE_URL,
     languages: {
@@ -97,8 +74,6 @@ export const metadata: Metadata = {
       en: BASE_URL,
     },
   },
-
-  // Open Graph / Facebook
   openGraph: {
     title: 'RevoChamp - Free Programming Courses & Tech Learning Platform',
     description:
@@ -124,8 +99,6 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-
-  // Twitter
   twitter: {
     card: 'summary_large_image',
     site: '@revochamp',
@@ -137,8 +110,6 @@ export const metadata: Metadata = {
       alt: 'RevoChamp Twitter Card',
     },
   },
-
-  // Additional SEO
   category: 'education',
   classification: 'Online Learning Platform',
   creator: 'RevoChamp',
@@ -148,28 +119,20 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
-
-  // App Links
   appleWebApp: {
     capable: true,
     title: 'RevoChamp',
     statusBarStyle: 'black-translucent',
   },
-
-  // Icons
   icons: {
-    icon: [
-      { url: '/favicon.png?v=2', type: 'image/png' },
-    ],
+    icon: [{ url: '/favicon.png?v=2', type: 'image/png' }],
     apple: [{ url: '/apple-icon-180.png', sizes: '180x180', type: 'image/png' }],
     shortcut: ['/shortcut-icon.png'],
   },
-
   manifest: '/manifest.json',
   referrer: 'origin-when-cross-origin',
 };
 
-// JSON-LD structured data for Organization
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
@@ -186,16 +149,8 @@ const organizationSchema = {
   description: 'Free online programming courses and tech learning platform',
   email: 'support@revochamp.site',
   foundingDate: '2024',
-  founders: [
-    {
-      '@type': 'Person',
-      name: 'RevoChamp Team',
-    },
-  ],
-  address: {
-    '@type': 'PostalAddress',
-    addressCountry: 'US',
-  },
+  founders: [{ '@type': 'Person', name: 'RevoChamp Team' }],
+  address: { '@type': 'PostalAddress', addressCountry: 'US' },
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
@@ -213,7 +168,6 @@ const organizationSchema = {
   },
 };
 
-// JSON-LD for WebSite schema
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -222,31 +176,23 @@ const websiteSchema = {
   description: 'Free programming courses and tech learning platform',
   potentialAction: {
     '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${BASE_URL}/courses?search={search_term_string}`,
-    },
+    target: { '@type': 'EntryPoint', urlTemplate: `${BASE_URL}/courses?search={search_term_string}` },
     'query-input': 'required name=search_term_string',
   },
   inLanguage: 'en-US',
   copyrightYear: '2026',
-  copyrightHolder: {
-    '@type': 'Organization',
-    name: 'RevoChamp',
-  },
+  copyrightHolder: { '@type': 'Organization', name: 'RevoChamp' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
+        {/* Optional: preconnect for any external fonts if you add them later */}
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /> */}
       </head>
       <body className="antialiased">
-        {/* Remove extension-added attributes before hydration */}
         <Script
           id="fix-extension-attributes"
           strategy="beforeInteractive"
@@ -266,7 +212,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 } else {
                   clean();
                 }
-                // Prevent future additions via MutationObserver
                 var observer = new MutationObserver(function(mutations) {
                   mutations.forEach(function(mutation) {
                     if (mutation.type === 'attributes' && attrs.includes(mutation.attributeName)) {
@@ -279,7 +224,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
-        {/* Your existing JSON‑LD scripts */}
         <Script
           id="organization-schema"
           type="application/ld+json"
