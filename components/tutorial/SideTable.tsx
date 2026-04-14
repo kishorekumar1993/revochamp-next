@@ -14,7 +14,7 @@ interface TableOfContentsData {
   readTime?: string;      // e.g., "5 min" or "8 min"
   totalSections?: number;
   lessonNumber?: number;
-  difficulty?: 'Beginner' | 'Intermediate' | 'Advanced';
+  difficulty?:string;
 }
 
 interface TableOfContentsProps {
