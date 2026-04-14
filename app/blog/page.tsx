@@ -1,49 +1,38 @@
-import { BlogStructuredDataList } from "@/components/blog/BlogStructuredData";
+import { fetchBlogPage, fetchCategoryPage } from "@/lib/blog-service";
 import BlogListClient from "./BlogListClient";
 import { BlogSummary } from "@/types/blog";
-import { fetchBlogPage, fetchCategoryPage } from "@/lib/blog-service";
-
-export const revalidate = 3600;
+import { BlogStructuredDataList } from "@/components/blog/BlogStructuredData";
 
 interface PageProps {
   searchParams?: Promise<{ page?: string; category?: string; q?: string }>;
 }
 
 export default async function BlogPage({ searchParams }: PageProps) {
-  const params = (await searchParams) ?? {};
+  const params = await searchParams || {};
 
-  const page = Number(params.page ?? 1);
-  const category = params.category ?? null;
-  const query = params.q ?? "";
+  const page = parseInt(params.page || "1");
+  const category = params.category || null;
+  const query = params.q || "";
 
   let initialPosts: BlogSummary[] = [];
   let totalPages = 1;
 
   try {
     let response;
-
     if (category && category !== "All") {
       response = await fetchCategoryPage(category.toLowerCase(), page);
     } else {
       response = await fetchBlogPage(page);
     }
-
-    initialPosts = response?.data ?? [];
-    totalPages = response?.totalPages ?? 1;
+    initialPosts = response?.data || [];
+    totalPages = response?.totalPages || 1;
   } catch (err) {
     console.error("Blog fetch failed:", err);
-    initialPosts = [];
-    totalPages = 1;
   }
 
   return (
     <>
-      {/* {initialPosts.length > 0 && (
-        <BlogStructuredDataList posts={initialPosts} />
-      )} */}
-{initialPosts.length > 0 && (
-  <BlogStructuredDataList posts={initialPosts} />
-)}
+      <BlogStructuredDataList posts={initialPosts} />
       <BlogListClient
         initialPosts={initialPosts}
         initialPage={page}
@@ -54,7 +43,6 @@ export default async function BlogPage({ searchParams }: PageProps) {
     </>
   );
 }
-
 // // app/blog/page.tsx
 // import { fetchBlogPage, fetchCategoryPage } from "@/lib/blog-service";
 // import BlogListClient from "./BlogListClient";
