@@ -35,10 +35,9 @@ export default function BlogCard({
             priority={featured}
             placeholder="blur"
             blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-      quality={70}                  // 🔥 reduce size
-  fetchPriority="high"          // 🔥 LCP fix
-
-     />
+            quality={70} // 🔥 reduce size
+            fetchPriority="high" // 🔥 LCP fix
+          />
         </div>
 
         {/* ✅ Content */}
@@ -53,9 +52,7 @@ export default function BlogCard({
             {post.title}
           </h3>
 
-          <p className="text-muted text-sm mt-2 line-clamp-2">
-            {post.summary}
-          </p>
+          <p className="text-muted text-sm mt-2 line-clamp-2">{post.summary}</p>
 
           <div className="flex items-center gap-2 mt-4 text-xs text-muted">
             <span>{formattedDate}</span>

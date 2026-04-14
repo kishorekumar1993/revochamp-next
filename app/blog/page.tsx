@@ -38,10 +38,12 @@ export default async function BlogPage({ searchParams }: PageProps) {
 
   return (
     <>
-      {initialPosts.length > 0 && (
+      {/* {initialPosts.length > 0 && (
         <BlogStructuredDataList posts={initialPosts} />
-      )}
-
+      )} */}
+{initialPosts.length > 0 && (
+  <BlogStructuredDataList posts={initialPosts} />
+)}
       <BlogListClient
         initialPosts={initialPosts}
         initialPage={page}
