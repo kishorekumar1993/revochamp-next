@@ -1,17 +1,19 @@
-import { BlogResponse, } from '@/types/blog';
+import { BlogResponse } from "@/types/blog";
 
-
-const BASE_URL = 'https://json.revochamp.site/blog';
+const BASE_URL = "https://json.revochamp.site/blog";
 
 // Correct URL patterns based on your working links
 const ALL_POSTS_URL = (page: number) => `${BASE_URL}/page/page-${page}.json`;
-const CATEGORY_URL = (category: string, page: number) => `${BASE_URL}/category/${category}/page-${page}.json`;
+const CATEGORY_URL = (category: string, page: number) =>
+  `${BASE_URL}/category/${category}/page-${page}.json`;
 const SINGLE_POST_URL = (slug: string) => `${BASE_URL}/${slug}.json`;
 
 async function safeFetch<T>(url: string, fallback: T): Promise<T> {
   try {
     console.log(`[safeFetch] ${url}`);
-    const res = await fetch(url, { next: { revalidate: 3600 } });
+    const res = await fetch(url, { next: { revalidate: 3600,
+      
+     } });
     if (!res.ok) {
       console.error(`[safeFetch] HTTP ${res.status} for ${url}`);
       return fallback;
@@ -57,10 +59,12 @@ export async function fetchBlogPage(page: number): Promise<BlogResponse> {
   return normalizeResponse(raw, page);
 }
 
-export async function fetchCategoryPage(category: string, page: number): Promise<BlogResponse> {
+export async function fetchCategoryPage(
+  category: string,
+  page: number,
+): Promise<BlogResponse> {
   const url = CATEGORY_URL(category.toLowerCase(), page);
   const raw = await safeFetch<any>(url, null);
   if (!raw) return { data: [], totalPages: 1, page };
   return normalizeResponse(raw, page);
 }
-
