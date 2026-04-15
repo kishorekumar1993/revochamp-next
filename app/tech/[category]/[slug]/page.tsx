@@ -1,4 +1,3 @@
-
 // app/tech/[category]/[slug]/page.tsx
 
 import { Metadata } from "next";
@@ -10,7 +9,9 @@ import { notFound } from "next/navigation";
 // 1. generateStaticParams – fetches all [category, slug] pairs at build time
 // ============================================================
 export async function generateStaticParams() {
-  const categoriesRes = await fetch('https://json.revochamp.site/tech/category.json');
+  const categoriesRes = await fetch(
+    "https://json.revochamp.site/tech/category.json",
+  );
   const data = await categoriesRes.json();
   const courses = data.courses || [];
 
@@ -19,9 +20,13 @@ export async function generateStaticParams() {
   for (const course of courses) {
     const category = course.slug;
     try {
-      const topicsRes = await fetch(`https://json.revochamp.site/${category}/topics.json`);
+      const topicsRes = await fetch(
+        `https://json.revochamp.site/${category}/topics.json`,
+      );
       if (!topicsRes.ok) {
-        console.warn(`Skipping ${category} – topics endpoint returned ${topicsRes.status}`);
+        console.warn(
+          `Skipping ${category} – topics endpoint returned ${topicsRes.status}`,
+        );
         continue;
       }
       const topics = await topicsRes.json();
@@ -59,12 +64,20 @@ export async function generateMetadata({
       description:
         data.subtitle ||
         `Master ${data.title} with interactive examples, quizzes, and code exercises.`,
-      keywords: [data.title, category, "tutorial", "coding", "programming", "learn"].join(", "),
+      keywords: [
+        data.title,
+        category,
+        "tutorial",
+        "coding",
+        "programming",
+        "learn",
+      ].join(", "),
       authors: [{ name: "Revochamp Team", url: baseUrl }],
       alternates: { canonical: pageUrl },
       openGraph: {
         title: data.title,
-        description: data.subtitle || `Master ${data.title} with interactive examples.`,
+        description:
+          data.subtitle || `Master ${data.title} with interactive examples.`,
         url: pageUrl,
         siteName: "Revochamp",
         images: [
@@ -83,7 +96,8 @@ export async function generateMetadata({
       twitter: {
         card: "summary_large_image",
         title: data.title,
-        description: data.subtitle || `Master ${data.title} with interactive examples.`,
+        description:
+          data.subtitle || `Master ${data.title} with interactive examples.`,
         images: [imageUrl],
         creator: "@revochamp",
         site: "@revochamp",
@@ -116,7 +130,11 @@ export async function generateMetadata({
 // 3. Helper: generate structured data (JSON-LD)
 // ===========================================================
 
-function generateStructuredData(tutorialData: any, category: string, slug: string) {
+function generateStructuredData(
+  tutorialData: any,
+  category: string,
+  slug: string,
+) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://revochamp.com";
   const url = `${baseUrl}/tech/${category}/${slug}`;
   const imageUrl = tutorialData.meta?.image
@@ -130,13 +148,20 @@ function generateStructuredData(tutorialData: any, category: string, slug: strin
   const structuredData = {
     "@context": "https://schema.org",
     "@type": schemaType,
-     "@id": url,      
+    "@id": url,
+    name: tutorialData.title, // ⭐ REQUIRED for Course
+
     headline: tutorialData.title,
-    description: tutorialData.subtitle || `Master ${tutorialData.title} with interactive examples.`,
+    description:
+      tutorialData.subtitle ||
+      `Master ${tutorialData.title} with interactive examples.`,
     url: url,
     image: imageUrl,
     datePublished: tutorialData.publishedAt || new Date().toISOString(),
-    dateModified: tutorialData.updatedAt || tutorialData.publishedAt || new Date().toISOString(),
+    dateModified:
+      tutorialData.updatedAt ||
+      tutorialData.publishedAt ||
+      new Date().toISOString(),
     author: {
       "@type": "Organization",
       name: "Revochamp",
@@ -161,21 +186,26 @@ function generateStructuredData(tutorialData: any, category: string, slug: strin
         name: "Revochamp",
         sameAs: baseUrl,
       },
-       offers: {                                       // ✅ 1. offers (critical)
+      offers: {
+        // ✅ 1. offers (critical)
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock",
       },
-      teaches: tutorialData.teaches || [               // ✅ 2. teaches
+      educationalLevel: "Beginner",
+      learningResourceType: "Tutorial",
+      teaches: tutorialData.teaches || [
+        // ✅ 2. teaches
         "CSS Comments",
         "Single line comments",
         "Multi-line comments",
         "Best practices",
       ],
       coursePrerequisites: tutorialData.prerequisites || "Basic HTML knowledge", // ✅ 3. coursePrerequisites
-      timeRequired: tutorialData.readTime || "PT1H",   // ✅ 4. timeRequired (root level)
-      aggregateRating: tutorialData.aggregateRating || { // ✅ 6. aggregateRating
+      timeRequired: tutorialData.readTime || "PT1H", // ✅ 4. timeRequired (root level)
+      aggregateRating: tutorialData.aggregateRating || {
+        // ✅ 6. aggregateRating
         "@type": "AggregateRating",
         ratingValue: "4.8",
         reviewCount: "120",
@@ -212,7 +242,7 @@ function generateStructuredData(tutorialData: any, category: string, slug: strin
       },
     ],
   };
-    // ✅ 9. FAQ schema generation
+  // ✅ 9. FAQ schema generation
   const faqData = tutorialData.faq?.length
     ? {
         "@context": "https://schema.org",
@@ -228,7 +258,7 @@ function generateStructuredData(tutorialData: any, category: string, slug: strin
       }
     : null;
 
-  return { structuredData, breadcrumbData,faqData };
+  return { structuredData, breadcrumbData, faqData };
 }
 
 // ============================================================
@@ -253,7 +283,11 @@ export default async function TutorialPage({
   }
 
   const allTopics = topics.map((topic: any) => ({ slug: topic.slug }));
-  const { structuredData, breadcrumbData } = generateStructuredData(tutorialData, category, slug);
+  const { structuredData, breadcrumbData } = generateStructuredData(
+    tutorialData,
+    category,
+    slug,
+  );
 
   return (
     <>
