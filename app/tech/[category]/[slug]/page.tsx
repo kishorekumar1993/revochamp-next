@@ -8,35 +8,64 @@ import { notFound } from "next/navigation";
 // ============================================================
 // 1. generateStaticParams – parallel fetching & uses fetchTopics
 // ============================================================
+// export async function generateStaticParams() {
+//   const categoriesRes = await fetch(
+//     "https://json.revochamp.site/tech/category.json",
+//   );
+//   const data = await categoriesRes.json();
+//   const courses = data.courses || [];
+
+//   // Fetch topics for all categories in parallel
+//   const results = await Promise.allSettled(
+//     courses.map(async (course: { slug: string }) => {
+//       const category = course.slug;
+//       try {
+//         const topics = await fetchTopics(category); // reuse helper
+//         return topics.map((topic: { slug: string }) => ({
+//           category,
+//           slug: topic.slug,
+//         }));
+//       } catch (error) {
+//         console.warn(`Skipping ${category} – failed to fetch topics:`, error);
+//         return []; // return empty array so nothing is added for this category
+//       }
+//     }),
+//   );
+
+//   // Flatten all successful results
+//   const allParams = results.flatMap((result) =>
+//     result.status === "fulfilled" ? result.value : [],
+//   );
+//   return allParams;
+// }
+
 export async function generateStaticParams() {
-  const categoriesRes = await fetch(
-    "https://json.revochamp.site/tech/category.json",
-  );
+  const categoriesRes = await fetch('https://json.revochamp.site/tech/category.json');
   const data = await categoriesRes.json();
   const courses = data.courses || [];
 
-  // Fetch topics for all categories in parallel
   const results = await Promise.allSettled(
     courses.map(async (course: { slug: string }) => {
       const category = course.slug;
       try {
-        const topics = await fetchTopics(category); // reuse helper
+        const topics = await fetchTopics(category);
         return topics.map((topic: { slug: string }) => ({
           category,
           slug: topic.slug,
         }));
-      } catch (error) {
-        console.warn(`Skipping ${category} – failed to fetch topics:`, error);
-        return []; // return empty array so nothing is added for this category
+      } catch (error: any) {
+        // Only log real errors, skip 404 silently
+        if (!error.message?.includes('404')) {
+          console.warn(`Skipping ${category} – ${error.message}`);
+        }
+        return [];
       }
-    }),
+    })
   );
 
-  // Flatten all successful results
-  const allParams = results.flatMap((result) =>
-    result.status === "fulfilled" ? result.value : [],
+  return results.flatMap(result =>
+    result.status === 'fulfilled' ? result.value : []
   );
-  return allParams;
 }
 
 // ============================================================
@@ -63,15 +92,30 @@ export async function generateMetadata({
       description:
         data.subtitle ||
         `Master ${data.title} with interactive examples, quizzes, and code exercises.`,
-      keywords: [data.title, category, "tutorial", "coding", "programming", "learn"].join(", "),
+      keywords: [
+        data.title,
+        category,
+        "tutorial",
+        "coding",
+        "programming",
+        "learn",
+      ].join(", "),
       authors: [{ name: "Revochamp Team", url: baseUrl }],
       alternates: { canonical: pageUrl },
       openGraph: {
         title: data.title,
-        description: data.subtitle || `Master ${data.title} with interactive examples.`,
+        description:
+          data.subtitle || `Master ${data.title} with interactive examples.`,
         url: pageUrl,
         siteName: "Revochamp",
-        images: [{ url: imageUrl, width: 1200, height: 630, alt: `${data.title} tutorial` }],
+        images: [
+          {
+            url: imageUrl,
+            width: 1200,
+            height: 630,
+            alt: `${data.title} tutorial`,
+          },
+        ],
         locale: "en_US",
         type: "article",
         authors: ["Revochamp Team"],
@@ -80,7 +124,8 @@ export async function generateMetadata({
       twitter: {
         card: "summary_large_image",
         title: data.title,
-        description: data.subtitle || `Master ${data.title} with interactive examples.`,
+        description:
+          data.subtitle || `Master ${data.title} with interactive examples.`,
         images: [imageUrl],
         creator: "@revochamp",
         site: "@revochamp",
@@ -100,7 +145,10 @@ export async function generateMetadata({
     };
   } catch (error) {
     console.error("Metadata generation failed for:", slug, error);
-    return { title: "Tutorial Not Found | Revochamp", robots: { index: false } };
+    return {
+      title: "Tutorial Not Found | Revochamp",
+      robots: { index: false },
+    };
   }
 }
 
@@ -129,13 +177,27 @@ function generateStructuredData(
     "@id": url,
     name: tutorialData.title,
     headline: tutorialData.title,
-    description: tutorialData.subtitle || `Master ${tutorialData.title} with interactive examples.`,
+    description:
+      tutorialData.subtitle ||
+      `Master ${tutorialData.title} with interactive examples.`,
     url: url,
     image: imageUrl,
     datePublished: tutorialData.publishedAt || new Date().toISOString(),
-    dateModified: tutorialData.updatedAt || tutorialData.publishedAt || new Date().toISOString(),
-    author: { "@type": "Organization", name: "Revochamp", url: baseUrl, logo: `${baseUrl}/logo.png` },
-    publisher: { "@type": "Organization", name: "Revochamp", logo: { "@type": "ImageObject", url: `${baseUrl}/logo.png` } },
+    dateModified:
+      tutorialData.updatedAt ||
+      tutorialData.publishedAt ||
+      new Date().toISOString(),
+    author: {
+      "@type": "Organization",
+      name: "Revochamp",
+      url: baseUrl,
+      logo: `${baseUrl}/logo.png`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Revochamp",
+      logo: { "@type": "ImageObject", url: `${baseUrl}/logo.png` },
+    },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: [category, "tutorial", "coding", tutorialData.title].join(", "),
     inLanguage: "en-US",
@@ -157,7 +219,11 @@ function generateStructuredData(
       structuredData.aggregateRating = tutorialData.aggregateRating;
     }
 
-    structuredData.provider = { "@type": "Organization", name: "Revochamp", sameAs: baseUrl };
+    structuredData.provider = {
+      "@type": "Organization",
+      name: "Revochamp",
+      sameAs: baseUrl,
+    };
     structuredData.offers = {
       "@type": "Offer",
       price: "0",

@@ -40,41 +40,66 @@ function QuizCard({
       className={`bg-white rounded-xl border ${borderColor} shadow-sm hover:shadow-md transition-shadow mb-4`}
     >
       {/* Header */}
-      <div className="px-5 py-3 bg-gray-50 border-b border-gray-100 rounded-t-xl flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white text-xs font-bold px-3 py-1 rounded-full">
-            Q{index + 1}
-          </div>
-          <span className="text-xs text-gray-400">of {total}</span>
-        </div>
-        {submitted && (
-          <div
-            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${
-              isCorrect === true
-                ? 'bg-green-50 text-green-600 border border-green-200'
-                : isCorrect === false
-                ? 'bg-red-50 text-red-500 border border-red-200'
-                : 'bg-gray-100 text-gray-500 border border-gray-200'
-            }`}
-          >
-            <span className="material-icons text-sm">
-              {isCorrect === true
-                ? 'check_circle'
-                : isCorrect === false
-                ? 'cancel'
-                : 'help'}
-            </span>
-            <span>
-              {isCorrect === true
-                ? 'Correct'
-                : isCorrect === false
-                ? 'Wrong'
-                : 'Not answered'}
-            </span>
-          </div>
-        )}
-      </div>
+<div
+  className="
+    px-4 sm:px-5 py-3 sm:py-3.5
+    bg-gray-50 dark:bg-gray-800/50
+    border-b border-gray-100 dark:border-gray-700
+    rounded-t-xl
+    flex items-center justify-between
+  "
+>
+  <div className="flex items-center gap-2 sm:gap-3">
+    <div
+      className="
+        bg-gradient-to-br from-blue-600 to-indigo-700 dark:from-blue-500 dark:to-indigo-600
+        text-xs sm:text-sm font-semibold tracking-wide
+        px-3 py-1.5
+        rounded-full
+        shadow-sm
+      "
+    >
+      Q{index + 1}
+    </div>
+    <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">
+      of {total}
+    </span>
+  </div>
 
+  {submitted && (
+    <div
+      className={`
+        flex items-center gap-1.5
+        px-2.5 sm:px-3 py-1 sm:py-1.5
+        rounded-full
+        text-xs sm:text-sm font-medium
+        transition-colors duration-200
+        ${
+          isCorrect === true
+            ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800'
+            : isCorrect === false
+            ? 'bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-300 border border-red-200 dark:border-red-800'
+            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700'
+        }
+      `}
+    >
+      <span className="material-icons text-sm sm:text-base">
+        {isCorrect === true
+          ? 'check_circle'
+          : isCorrect === false
+          ? 'cancel'
+          : 'help'}
+      </span>
+      <span>
+        {isCorrect === true
+          ? 'Correct'
+          : isCorrect === false
+          ? 'Incorrect'
+          : 'Not answered'}
+      </span>
+    </div>
+  )}
+</div>
       {/* Question */}
       <div className="px-5 pt-4 pb-2">
         <p className="text-gray-800 font-semibold text-base leading-relaxed">
