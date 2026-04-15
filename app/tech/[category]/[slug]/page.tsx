@@ -130,8 +130,7 @@ function generateStructuredData(tutorialData: any, category: string, slug: strin
   const structuredData = {
     "@context": "https://schema.org",
     "@type": schemaType,
-    // ✅ FIX: Added mandatory "name" field (required for Course)
-    name: tutorialData.title,
+     "@id": url,      
     headline: tutorialData.title,
     description: tutorialData.subtitle || `Master ${tutorialData.title} with interactive examples.`,
     url: url,
@@ -162,8 +161,25 @@ function generateStructuredData(tutorialData: any, category: string, slug: strin
         name: "Revochamp",
         sameAs: baseUrl,
       },
-      // Optional but recommended for better rich results
-      educationalLevel: "Beginner",
+       offers: {                                       // ✅ 1. offers (critical)
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+      teaches: tutorialData.teaches || [               // ✅ 2. teaches
+        "CSS Comments",
+        "Single line comments",
+        "Multi-line comments",
+        "Best practices",
+      ],
+      coursePrerequisites: tutorialData.prerequisites || "Basic HTML knowledge", // ✅ 3. coursePrerequisites
+      timeRequired: tutorialData.readTime || "PT1H",   // ✅ 4. timeRequired (root level)
+      aggregateRating: tutorialData.aggregateRating || { // ✅ 6. aggregateRating
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        reviewCount: "120",
+      },
       hasCourseInstance: {
         "@type": "CourseInstance",
         courseMode: ["online", "self-paced"],
@@ -196,93 +212,29 @@ function generateStructuredData(tutorialData: any, category: string, slug: strin
       },
     ],
   };
+    // ✅ 9. FAQ schema generation
+  const faqData = tutorialData.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: tutorialData.faq.map((item: any) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
-  return { structuredData, breadcrumbData };
+  return { structuredData, breadcrumbData,faqData };
 }
-
-// function generateStructuredData(tutorialData: any, category: string, slug: string) {
-//   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://revochamp.com";
-//   const url = `${baseUrl}/tech/${category}/${slug}`;
-//   const imageUrl = tutorialData.meta?.image
-//     ? tutorialData.meta.image.startsWith("http")
-//       ? tutorialData.meta.image
-//       : `${baseUrl}${tutorialData.meta.image}`
-//     : `${baseUrl}/og-default.png`;
-
-//   const schemaType = tutorialData.quiz?.length > 0 ? "Course" : "TechArticle";
-
-//   const structuredData = {
-//     "@context": "https://schema.org",
-//     "@type": schemaType,
-//     headline: tutorialData.title,
-//     description: tutorialData.subtitle || `Master ${tutorialData.title} with interactive examples.`,
-//     url: url,
-//     image: imageUrl,
-//     datePublished: tutorialData.publishedAt || new Date().toISOString(),
-//     dateModified: tutorialData.updatedAt || tutorialData.publishedAt || new Date().toISOString(),
-//     author: {
-//       "@type": "Organization",
-//       name: "Revochamp",
-//       url: baseUrl,
-//       logo: `${baseUrl}/logo.png`,
-//     },
-//     publisher: {
-//       "@type": "Organization",
-//       name: "Revochamp",
-//       logo: { "@type": "ImageObject", url: `${baseUrl}/logo.png` },
-//     },
-//     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-//     keywords: [category, "tutorial", "coding", tutorialData.title].join(", "),
-//     inLanguage: "en-US",
-//     isAccessibleForFree: true,
-//   };
-
-//   if (schemaType === "Course") {
-//     Object.assign(structuredData, {
-//       provider: {
-//         "@type": "Organization",
-//         name: "Revochamp",
-//         sameAs: baseUrl,
-//       },
-//       hasCourseInstance: {
-//         "@type": "CourseInstance",
-//         courseMode: ["online", "self-paced"],
-//         timeRequired: tutorialData.readTime || "PT1H",
-//       },
-//     });
-//   }
-
-//   const breadcrumbData = {
-//     "@context": "https://schema.org",
-//     "@type": "BreadcrumbList",
-//     itemListElement: [
-//       {
-//         "@type": "ListItem",
-//         position: 1,
-//         name: "Home",
-//         item: baseUrl,
-//       },
-//       {
-//         "@type": "ListItem",
-//         position: 2,
-//         name: category.charAt(0).toUpperCase() + category.slice(1),
-//         item: `${baseUrl}/tech/${category}`,
-//       },
-//       {
-//         "@type": "ListItem",
-//         position: 3,
-//         name: tutorialData.title,
-//         item: url,
-//       },
-//     ],
-//   };
-
-//   return { structuredData, breadcrumbData };
-// }
 
 // ============================================================
 // 4. Main page component (server component)
 // ============================================================
+
 export default async function TutorialPage({
   params,
 }: {

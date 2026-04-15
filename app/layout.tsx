@@ -38,14 +38,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   // Basic SEO
-  title: {
-    default: 'RevoChamp - Free Programming Courses & Tech Learning Platform',
-    template: '%s | RevoChamp',
-  },
-  description:
-    'Learn Flutter, React, Backend, DevOps, AI and more with RevoChamp. Free online programming courses designed for developers. Start your tech career today!',
-
-  // Keywords
+title: {
+  default: 'RevoChamp – Free Programming Courses, Tech Blogs, Coding Tools & Developer Resources',
+  template: '%s | RevoChamp',
+},
+description:
+  'RevoChamp is an all-in-one developer platform offering free programming courses, tech blogs, coding tools, API tester, UI builder, AI utilities, and interview preparation to accelerate your tech career.',  // Keywords
   keywords: [
     'free programming courses',
     'learn coding online',
@@ -67,8 +65,98 @@ export const metadata: Metadata = {
     'coding bootcamp',
     'software development',
     'computer science',
-  ],
+  // Core Learning
+  'free programming courses',
+  'learn coding online',
+  'programming for beginners',
+  'online coding classes',
+  'tech education platform',
+  'software development tutorials',
 
+  // Frontend & Web
+  'frontend development',
+  'web development tutorial',
+  'JavaScript tutorial',
+  'TypeScript tutorial',
+  'React course',
+  'Next.js tutorial',
+  'responsive web design',
+
+  // Mobile Development
+  'Flutter development',
+  'Flutter app development course',
+  'mobile app development',
+  'Android development',
+  'iOS development',
+  'React Native tutorial',
+
+  // Backend & APIs
+  'backend development',
+  'Node.js backend',
+  'REST API development',
+  'API development',
+  'GraphQL tutorial',
+  'microservices architecture',
+
+  // Databases
+  'SQL tutorial',
+  'NoSQL database',
+  'MongoDB tutorial',
+  'Firebase backend',
+
+  // AI & Trending
+  'AI courses',
+  'AI for developers',
+  'AI code generator',
+  'generate code using AI',
+  'prompt engineering',
+  'low code platform',
+
+  // DevOps & Cloud
+  'DevOps training',
+  'Docker tutorial',
+  'Kubernetes basics',
+  'CI/CD pipeline',
+  'cloud computing',
+  'AWS for beginners',
+
+  // Tools (Your USP)
+  'free developer tools',
+  'API tester online',
+  'Postman alternative',
+  'UI builder tool',
+  'drag and drop UI builder',
+  'Flutter UI builder',
+  'form builder online',
+  'JSON to model generator',
+  'code generator tool',
+
+  // Blogs & Content
+  'tech blogs',
+  'programming blog',
+  'coding tutorials',
+  'developer articles',
+
+  // Career & Interview
+  'coding interview preparation',
+  'mock interview practice',
+  'software engineer interview questions',
+  'technical interview guide',
+  'full stack developer roadmap',
+
+  // Architecture & Quality
+  'clean architecture',
+  'design patterns in software',
+  'unit testing',
+  'test automation',
+  'web security',
+  'JWT authentication',
+
+  // Branding
+  'RevoChamp',
+  'RevoChamp platform',
+  'developer learning platform'
+],
   authors: [{ name: 'RevoChamp', url: BASE_URL }],
 
   // Robots configuration
@@ -100,10 +188,13 @@ export const metadata: Metadata = {
 
   // Open Graph / Facebook
   openGraph: {
-    title: 'RevoChamp - Free Programming Courses & Tech Learning Platform',
-    description:
-      'Master modern tech skills with 100% free programming courses. Learn Flutter, React, Backend, DevOps, AI and more. Start your journey today!',
-    url: BASE_URL,
+title: {
+  default: 'RevoChamp – Free Programming Courses, Tech Blogs, Coding Tools & Developer Resources',
+  template: '%s | RevoChamp',
+},
+description:
+  'RevoChamp is an all-in-one developer platform offering free programming courses, tech blogs, coding tools, API tester, UI builder, AI utilities, and interview preparation to accelerate your tech career.',  // Keywords
+     url: BASE_URL,
     siteName: 'RevoChamp',
     images: [
       {

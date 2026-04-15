@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About RevoChamp',
     description: 'Free tech education for everyone.',
-    url: 'https://revochamp.site/tech/about',
+    url: 'https://revochamp.site/about',
     images: ['https://revochamp.site/tech/about-og.png'],
   },
   robots: 'index, follow, max-image-preview:large',
