@@ -8,6 +8,11 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+      screens: {
+    sm: '640px',  // ← should be ≥ 640px
+    md: '768px',
+    lg: '1024px',
+  },
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
