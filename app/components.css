@@ -1535,3 +1535,13 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/* In global CSS */
+.prose pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.prose table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}

@@ -38,8 +38,8 @@ export function NewspaperBlogDesign({
   const stats = post.stats.slice(0, 3);
 
   return (
-    // <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-    <div className="min-h-screen bg-[#F7F4EF]">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    {/* <div className="min-h-screen bg-[#F7F4EF]"> */}
 
     {/* Progress Bar */}
       <div
@@ -207,8 +207,8 @@ export function NewspaperBlogDesign({
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-[1fr_320px] gap-12">
           {/* Article Content */}
-          <article className="prose prose-lg max-w-none">
-            <ContentRenderer items={post.content} />
+<article className="prose prose-lg max-w-none overflow-x-auto">
+              <ContentRenderer items={post.content} />
 
             {/* Share Section */}
             <div className="mt-12 pt-8 border-t border-slate-200">
