@@ -18,7 +18,7 @@ export function TableOfContents({ headings }: { headings: string[] }) {
           setActiveId(visible[0].target.id);
         }
       },
-      { rootMargin: "0px 0px -50% 0px", threshold: 0 }
+      { rootMargin: "0px 0px -50% 0px", threshold: 0 },
     );
 
     headings.forEach((h) => {
@@ -40,7 +40,7 @@ export function TableOfContents({ headings }: { headings: string[] }) {
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    heading: string
+    heading: string,
   ) => {
     e.preventDefault();
     const id = slugify(heading);
@@ -57,18 +57,22 @@ export function TableOfContents({ headings }: { headings: string[] }) {
     <div className="hidden lg:block">
       <div
         className={`transition-all duration-300 ${
-          isSticky ? "sticky top-24 py-4 px-4 rounded-lg bg-white border border-slate-200 shadow-lg" : ""
+          isSticky
+            ? "sticky top-24 py-4 px-4 rounded-lg bg-white border border-slate-200 shadow-lg"
+            : ""
         }`}
       >
         <h3 className="text-xs font-bold text-slate-600 uppercase tracking-wider mb-4 px-4">
           📖 In This Article
         </h3>
         <ul className="space-y-2">
-          {headings.map((h) => {
+          {headings.map((h, index) => {
             const slug = slugify(h);
             const isActive = activeId === slug;
             return (
-              <li key={h}>
+              <li key={`${h}-${index}`}>
+                {" "}
+                {/* ✅ unique key */}
                 <a
                   href={`#${slug}`}
                   onClick={(e) => handleClick(e, h)}
@@ -178,8 +182,6 @@ function slugify(text: string): string {
 //   );
 // }
 
-
-
 // export function ContentRenderer({ items }: { items: ContentItem[] }) {
 //   return (
 //     <>
@@ -231,4 +233,3 @@ function slugify(text: string): string {
 //     .replace(/^-|-$/g, '');
 //   return slug || 'heading';
 // }
-
