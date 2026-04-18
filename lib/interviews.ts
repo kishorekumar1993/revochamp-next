@@ -153,7 +153,7 @@ const fallbackInterviews: Interview[] = [
 export async function fetchInterviews(): Promise<Interview[]> {
   try {
     const res = await fetch('https://json.revochamp.site/tech/category.json', {
-      next: { revalidate: 3600 }, // ISR: revalidate every hour
+      next: {revalidate: 10 }, // ISR: revalidate every hour
     });
     
     if (!res.ok) {
@@ -258,7 +258,7 @@ export function getCategoryColor(category: string): number {
 
 // export async function fetchInterviews(): Promise<Interview[]> {
 //   const res = await fetch('https://json.revochamp.site/tech/category.json', {
-//     next: { revalidate: 3600 }, // ISR: revalidate every hour
+//     next: {revalidate: 10 }, // ISR: revalidate every hour
 //   });
 //   if (!res.ok) throw new Error('Failed to fetch interviews');
 //   const data = await res.json();

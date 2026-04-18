@@ -13,7 +13,7 @@ export async function getMinimalBlogList(category: string | null): Promise<{ slu
   const url = category && category !== 'All'
     ? `https://json.revochamp.site/blog/category/${category.toLowerCase()}/page-1.json`
     : `https://json.revochamp.site/blog/page/page-1.json`;
-  const res = await fetch(url, { next: { revalidate: 3600 } }); // ISR
+  const res = await fetch(url, { next: { revalidate: 10 } }); // ISR
   const data = await res.json();
   const posts = Array.isArray(data) ? data : data.data || [];
   return posts.map((p: any) => ({
@@ -26,7 +26,7 @@ export async function getMinimalBlogList(category: string | null): Promise<{ slu
 async function safeFetch<T>(url: string, fallback: T): Promise<T> {
   try {
     console.log(`[safeFetch] ${url}`);
-    const res = await fetch(url, { next: { revalidate: 3600,
+    const res = await fetch(url, { next: { revalidate: 10,
       
      } });
     if (!res.ok) {

@@ -10,7 +10,7 @@ interface Course {
 
 export async function getAllCategories(): Promise<{ slug: string }[]> {
   const res = await fetch('https://json.revochamp.site/tech/category.json', {
-    next: { revalidate: 3600 }
+    next: { revalidate: 10 }
   });
   if (!res.ok) throw new Error(`Failed to fetch categories: ${res.status}`);
   const data = await res.json() as { courses: Course[] };
@@ -20,7 +20,7 @@ export async function getAllCategories(): Promise<{ slug: string }[]> {
 
 export async function fetchTopics(category: string): Promise<TutorialTopic[]> {
   const res = await fetch(`${JSON_BASE}/${category.toLowerCase()}/topics.json`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 10 },
   });
   if (!res.ok) throw new Error(`Failed to fetch topics for ${category}`);
   return res.json();

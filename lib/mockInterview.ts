@@ -26,7 +26,7 @@ export interface ScreenConfig {
 export async function fetchTopics(category: string): Promise<MockTutorialTopic[]> {
   const res = await fetch(
     `https://json.revochamp.site/mockinterview/${category}/topics.json`,
-    { next: { revalidate: 3600 } }
+    { next: { revalidate: 10 } }
   );
   if (!res.ok) throw new Error('Failed to fetch topics');
   const data = await res.json();

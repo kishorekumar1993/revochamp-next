@@ -48,13 +48,13 @@ export async function getAllBlogSlugs(): Promise<string[]> {
 export async function fetchBlogBySlug(slug: string): Promise<BlogPost> {
   // Try root URL first
   let url = `${BASE_URL}/${slug}.json`;
-  let res = await fetch(url, { next: { revalidate: 3600 } });
+  let res = await fetch(url, { next: { revalidate: 10 } });
 
   // If not found, try each category folder
   if (!res.ok) {
     for (const cat of ALL_CATEGORIES) {
       const catUrl = `${BASE_URL}/${cat}/${slug}.json`;
-      const catRes = await fetch(catUrl, { next: { revalidate: 3600 } });
+      const catRes = await fetch(catUrl, { next: { revalidate: 10 } });
       if (catRes.ok) {
         res = catRes;
         break;
@@ -175,13 +175,13 @@ export async function fetchBlogBySlug(slug: string): Promise<BlogPost> {
 // export async function fetchBlogBySlug(slug: string): Promise<BlogPost> {
 //   // 1. Try root URL
 //   let url = `${BASE_URL}/${slug}.json`;
-//   let res = await fetch(url, { next: { revalidate: 3600 } });
+//   let res = await fetch(url, { next: { revalidate: 10 } });
 
 //   // 2. If not found, try each category folder
 //   if (!res.ok) {
 //     for (const cat of ALL_CATEGORIES) {
 //       const catUrl = `${BASE_URL}/${cat}/${slug}.json`;
-//       const catRes = await fetch(catUrl, { next: { revalidate: 3600 } });
+//       const catRes = await fetch(catUrl, { next: { revalidate: 10 } });
 //       if (catRes.ok) {
 //         res = catRes;
 //         break;
@@ -225,7 +225,7 @@ export async function fetchBlogBySlug(slug: string): Promise<BlogPost> {
 
 // // export async function fetchBlogBySlug(slug: string): Promise<BlogPost> {
 // //   const url = `${BASE_URL}/${slug}.json`;
-// //   const res = await fetch(url, { next: { revalidate: 3600 } });
+// //   const res = await fetch(url, { next: { revalidate: 10 } });
 // //   if (!res.ok) throw new Error(`Failed to fetch ${slug}`);
 // //   const data = await res.json();
   

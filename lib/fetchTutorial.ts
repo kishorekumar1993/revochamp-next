@@ -20,7 +20,7 @@ export async function getAllCategories(): Promise<{ slug: string }[]> {
 
 export async function fetchTopics(category: string): Promise<TutorialTopic[]> {
   const res = await fetch(`${BASE_URL}/${category.toLowerCase()}/topics.json`, {
-    next: { revalidate: 3600 }, // Revalidate every hour
+    next: {revalidate: 10 }, // Revalidate every hour
   });
   if (!res.ok) throw new Error('Failed to fetch topics');
   return res.json();
@@ -28,7 +28,7 @@ export async function fetchTopics(category: string): Promise<TutorialTopic[]> {
 
 
 export async function fetchTutorial(category: string, slug: string): Promise<TutorialData> {
-  const res = await fetch(`${BASE_URL}/${category}/${slug}.json`, { next: { revalidate: 3600 } });
+  const res = await fetch(`${BASE_URL}/${category}/${slug}.json`, { next: {revalidate: 10 } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const json = await res.json();
 

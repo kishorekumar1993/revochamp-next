@@ -30,7 +30,7 @@ export async function fetchTestSession(category: string, fileName: string): Prom
   try {
     const res = await fetch(
       `https://json.revochamp.site/mockinterview/${category}/${fileName}.json`,
-      { next: { revalidate: 3600 } } // ISR: revalidate every hour
+      { next: {revalidate: 10 } } // ISR: revalidate every hour
     );
     if (!res.ok) return null;
     const data = await res.json();

@@ -40,7 +40,7 @@ export async function fetchCourses(): Promise<{
     return { courses: cachedCourses, categories: cachedCategories };
   }
 
-  const res = await fetch(API_URL, { next: { revalidate: 3600 } }); // ISR fallback
+  const res = await fetch(API_URL, { next: {revalidate: 10 } }); // ISR fallback
   if (!res.ok) throw new Error("Failed to fetch courses");
   const data = await res.json();
   const courses: Course[] = data.courses.map((c: any) => ({
