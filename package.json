@@ -15,7 +15,7 @@
     "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.8.0",
-    "next": "^15.5.15",
+    "next": "^16.2.4",
     "next-sitemap": "^4.2.3",
     "prismjs": "^1.30.0",
     "react": "^19.2.5",
