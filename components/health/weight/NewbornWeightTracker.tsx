@@ -4,8 +4,6 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Playfair_Display, Poppins } from "next/font/google";
 import {
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -288,7 +286,14 @@ export default function NewbornWeightTracker() {
                           }
                           return label;
                         }}
-                        formatter={(value: number) => [`${value.toFixed(2)} kg`, "Weight"]}
+                        formatter={(value: any) => {
+                          // Handle both single values and arrays (recharts may pass array for stacked charts)
+                          const val = Array.isArray(value) ? value[0] : value;
+                          if (typeof val === "number") {
+                            return [`${val.toFixed(2)} kg`, "Weight"];
+                          }
+                          return [val, "Weight"];
+                        }}
                       />
                       <Area
                         type="monotone"
