@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     title: "Hospital Bag Checklist | Revochamp",
     description:
       "Get ready for delivery! Track your packing progress with our interactive checklist for mom, baby, partner, and documents.",
-    url: "https://revochamp.com/hospital-bag-checklist",
+    url: "https://revochamp.site/hospital-bag-checklist",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-hospital-bag.png",
+        url: "https://revochamp.site/og-hospital-bag.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Hospital Bag Checklist",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Hospital Bag Checklist | Revochamp",
     description:
       "Pack with confidence! Interactive checklist for your hospital stay.",
-    images: ["https://revochamp.com/og-hospital-bag.png"],
+    images: ["https://revochamp.site/og-hospital-bag.png"],
   },
 };
 

@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     title: "Free Developer Tools & Utilities | DevTools",
     description:
       "Boost your productivity with free online developer tools. JSON formatter, Base64, JWT, regex, hash generators, and more. 100% client-side and secure.",
-    url: "https://revochamp.com/tools/tech",
+    url: "https://revochamp.site/tools/tech",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-dev-tools.png",
+        url: "https://revochamp.site/og-dev-tools.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Developer Tools",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Developer Tools & Utilities | Revochamp",
     description:
       "Free online tools for developers. JSON, Base64, JWT, regex, hashing, QR codes, and more.",
-    images: ["https://revochamp.com/og-dev-tools.png"],
+    images: ["https://revochamp.site/og-dev-tools.png"],
   },
   alternates: {
     canonical: "/tools/tech",
@@ -74,11 +74,11 @@ export default function TechToolsPage() {
 //     title: "Health Tools for Pregnancy & Parenting | Revochamp",
 //     description:
 //       "Discover free, evidence-based tools to support your journey from fertility to parenthood.",
-//     url: "https://revochamp.com/health-tools",
+//     url: "https://revochamp.site/health-tools",
 //     siteName: "Revochamp",
 //     images: [
 //       {
-//         url: "https://revochamp.com/og-tools.png",
+//         url: "https://revochamp.site/og-tools.png",
 //         width: 1200,
 //         height: 630,
 //         alt: "Revochamp Health Tools",
@@ -91,7 +91,7 @@ export default function TechToolsPage() {
 //     title: "Health Tools | Revochamp",
 //     description:
 //       "Free calculators and trackers for fertility, pregnancy, and baby care.",
-//     images: ["https://revochamp.com/og-tools.png"],
+//     images: ["https://revochamp.site/og-tools.png"],
 //   },
 // };
 

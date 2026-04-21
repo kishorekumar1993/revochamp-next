@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     title: "Baby Teething Calculator | Revochamp",
     description:
       "Find out what to expect during your baby's teething journey. Age-based stages with care tips for each phase.",
-    url: "https://revochamp.com/teething-calculator",
+    url: "https://revochamp.site/teething-calculator",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-teething.png",
+        url: "https://revochamp.site/og-teething.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Teething Calculator",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Baby Teething Calculator | Revochamp",
     description:
       "Predict teething stages and get soothing tips. Free tool for parents.",
-    images: ["https://revochamp.com/og-teething.png"],
+    images: ["https://revochamp.site/og-teething.png"],
   },
 };
 

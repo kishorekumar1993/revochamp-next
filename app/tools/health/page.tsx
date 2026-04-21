@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     title: "Health Tools for Pregnancy & Parenting | Revochamp",
     description:
       "Discover free, evidence-based tools to support your journey from fertility to parenthood.",
-    url: "https://revochamp.com/health-tools",
+    url: "https://revochamp.site/health-tools",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-tools.png",
+        url: "https://revochamp.site/og-tools.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Health Tools",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Health Tools | Revochamp",
     description:
       "Free calculators and trackers for fertility, pregnancy, and baby care.",
-    images: ["https://revochamp.com/og-tools.png"],
+    images: ["https://revochamp.site/og-tools.png"],
   },
 };
 

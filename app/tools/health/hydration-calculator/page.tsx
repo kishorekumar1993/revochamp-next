@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     title: "Daily Water Intake Calculator | Revochamp",
     description:
       "Find out exactly how much water you need each day. Personalized hydration calculator with workout and pregnancy adjustments.",
-    url: "https://revochamp.com/hydration-calculator",
+    url: "https://revochamp.site/hydration-calculator",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-hydration.png",
+        url: "https://revochamp.site/og-hydration.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Hydration Calculator",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Daily Water Intake Calculator | Revochamp",
     description:
       "Calculate your optimal water intake in seconds. Stay healthy and hydrated.",
-    images: ["https://revochamp.com/og-hydration.png"],
+    images: ["https://revochamp.site/og-hydration.png"],
   },
 };
 

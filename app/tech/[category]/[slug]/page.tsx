@@ -79,7 +79,7 @@ export async function generateMetadata({
   const { category, slug } = await params;
   try {
     const data = await fetchTutorial(category, slug);
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://revochamp.com";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://revochamp.site";
     const pageUrl = `${baseUrl}/tech/${category}/${slug}`;
     const imageUrl = data.meta?.image
       ? data.meta.image.startsWith("http")
@@ -160,7 +160,7 @@ function generateStructuredData(
   category: string,
   slug: string,
 ) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://revochamp.com";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://revochamp.site";
   const url = `${baseUrl}/tech/${category}/${slug}`;
   const imageUrl = tutorialData.meta?.image
     ? tutorialData.meta.image.startsWith("http")

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'Free Health Calculator | BMI, BMR & Body Fat',
     description: 'Know your numbers: BMI, BMR, body fat, and more. Private and instant.',
     type: 'website',
-    url: 'https://revochamp.com/health/health-calculator',
+    url: 'https://revochamp.site/health/health-calculator',
   },
   twitter: {
     card: 'summary_large_image',

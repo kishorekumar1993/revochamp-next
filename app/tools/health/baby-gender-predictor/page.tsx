@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     title: "Chinese Gender Predictor | Revochamp",
     description:
       "Curious about your baby's gender? Use the traditional Chinese Gender Chart for a fun prediction based on mother's age and conception month.",
-    url: "https://revochamp.com/baby-gender-predictor",
+    url: "https://revochamp.site/baby-gender-predictor",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-gender-predictor.png",
+        url: "https://revochamp.site/og-gender-predictor.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Baby Gender Predictor",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Chinese Gender Predictor | Revochamp",
     description:
       "Fun baby gender prediction using the ancient Chinese chart. Boy or girl? Find out now!",
-    images: ["https://revochamp.com/og-gender-predictor.png"],
+    images: ["https://revochamp.site/og-gender-predictor.png"],
   },
 };
 

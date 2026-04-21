@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Free, evidence‑based tool. Save multiple measurements, track percentiles over time, and receive personalised growth insights.",
     type: "website",
     locale: "en_US",
-    url: "https://revochamp.com/health/baby-growth",
+    url: "https://revochamp.site/health/baby-growth",
   },
   twitter: {
     card: "summary_large_image",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Track weight and height percentiles for babies 0‑24 months. Save history and see trends.",
   },
   alternates: {
-    canonical: "https://revochamp.com/health/baby-growth",
+    canonical: "https://revochamp.site/health/baby-growth",
   },
 };
 

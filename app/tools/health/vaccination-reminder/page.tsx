@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     title: "Pregnancy Vaccination Reminder | Revochamp",
     description:
       "Check which vaccines are due based on your pregnancy week. Follow Indian government recommendations for Td, COVID-19, and more.",
-    url: "https://revochamp.com/vaccination-reminder",
+    url: "https://revochamp.site/vaccination-reminder",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-vaccination.png",
+        url: "https://revochamp.site/og-vaccination.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Vaccination Reminder",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Pregnancy Vaccination Reminder | Revochamp",
     description:
       "Track recommended vaccines during pregnancy with India-specific guidelines.",
-    images: ["https://revochamp.com/og-vaccination.png"],
+    images: ["https://revochamp.site/og-vaccination.png"],
   },
 };
 

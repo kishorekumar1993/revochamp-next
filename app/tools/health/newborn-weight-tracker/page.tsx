@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     title: "Newborn Weight Tracker | Revochamp",
     description:
       "Monitor your baby's weight gain with easy logging and visual charts. Track progress and share with your pediatrician.",
-    url: "https://revochamp.com/newborn-weight-tracker",
+    url: "https://revochamp.site/newborn-weight-tracker",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-weight-tracker.png",
+        url: "https://revochamp.site/og-weight-tracker.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Newborn Weight Tracker",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Newborn Weight Tracker | Revochamp",
     description:
       "Log baby's weight and see growth trends. Free, private tracker for new parents.",
-    images: ["https://revochamp.com/og-weight-tracker.png"],
+    images: ["https://revochamp.site/og-weight-tracker.png"],
   },
 }
 

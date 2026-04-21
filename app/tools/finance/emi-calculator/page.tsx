@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free EMI Calculator - Calculate Loan EMI Instantly',
     description: 'Calculate your monthly loan EMI, total interest, and view complete amortization schedule. Supports home, car, and personal loans.',
-    url: 'https://revochamp.com/tools/finance/emi-calculator',
+    url: 'https://revochamp.site/tools/finance/emi-calculator',
     type: 'website',
   },
   alternates: {
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free online tool to calculate monthly EMI for loans.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.com/tools/finance/emi-calculator',
+  url: 'https://revochamp.site/tools/finance/emi-calculator',
   offers: {
     '@type': 'Offer',
     price: '0',

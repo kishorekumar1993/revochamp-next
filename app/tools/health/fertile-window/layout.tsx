@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Fertile Window Calculator | Know Your Most Fertile Days',
     description: 'Plan your pregnancy with confidence. Free, private, and accurate.',
     type: 'website',
-    url: 'https://revochamp.com/health/fertile-window',
+    url: 'https://revochamp.site/health/fertile-window',
   },
   twitter: {
     card: 'summary_large_image',

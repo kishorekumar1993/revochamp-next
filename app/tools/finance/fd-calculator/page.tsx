@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free FD Calculator - Calculate Fixed Deposit Returns',
     description: 'Calculate your Fixed Deposit maturity amount and interest earned. Supports monthly, quarterly, half-yearly, and yearly compounding.',
-    url: 'https://revochamp.com/tools/finance/fd-calculator',
+    url: 'https://revochamp.site/tools/finance/fd-calculator',
     type: 'website',
   },
   alternates: {
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free online tool to calculate Fixed Deposit returns and maturity amount.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.com/tools/finance/fd-calculator',
+  url: 'https://revochamp.site/tools/finance/fd-calculator',
   offers: {
     '@type': 'Offer',
     price: '0',

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Plan ahead with accurate period and fertility predictions. Save your cycle history.",
     type: "website",
     locale: "en_US",
-    url: "https://revochamp.com/health/period-calculator",
+    url: "https://revochamp.site/health/period-calculator",
   },
   twitter: {
     card: "summary_large_image",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Track your cycle, predict ovulation, and never be surprised by your next period.",
   },
   alternates: {
-    canonical: "https://revochamp.com/health/period-calculator",
+    canonical: "https://revochamp.site/health/period-calculator",
   },
 };
 

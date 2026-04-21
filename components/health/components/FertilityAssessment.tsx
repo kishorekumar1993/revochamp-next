@@ -612,7 +612,7 @@ Disclaimer: This is an educational tool, not a medical diagnosis.
             name: "Free Fertility Test for Couples",
             description:
               "Interactive fertility assessment covering female and male health, lifestyle, and timing factors.",
-            url: "https://revochamp.com/tools/health/fertility-assessment",
+            url: "https://revochamp.site/tools/health/fertility-assessment",
             about: {
               "@type": "MedicalCondition",
               name: "Fertility",

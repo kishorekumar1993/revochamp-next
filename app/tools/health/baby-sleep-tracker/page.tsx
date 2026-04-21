@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     title: "Baby Sleep Tracker | Revochamp",
     description:
       "Track your baby's naps and night sleep. Get daily summaries and identify sleep patterns. Free, easy-to-use timer for parents.",
-    url: "https://revochamp.com/baby-sleep-tracker",
+    url: "https://revochamp.site/baby-sleep-tracker",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-sleep-tracker.png",
+        url: "https://revochamp.site/og-sleep-tracker.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Baby Sleep Tracker",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Baby Sleep Tracker | Revochamp",
     description:
       "Log your baby's sleep easily. Free timer and daily summary for new parents.",
-    images: ["https://revochamp.com/og-sleep-tracker.png"],
+    images: ["https://revochamp.site/og-sleep-tracker.png"],
   },
 };
 

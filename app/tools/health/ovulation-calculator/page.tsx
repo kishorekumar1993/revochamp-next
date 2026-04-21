@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     title: "Ovulation & Fertility Calculator | Revochamp",
     description:
       "Accurately predict ovulation and fertile days. Get cycle predictions, probability charts, and expert tips to boost your chances of conception.",
-    url: "https://revochamp.com/ovulation-calculator",
+    url: "https://revochamp.site/ovulation-calculator",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-ovulation.png",
+        url: "https://revochamp.site/og-ovulation.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Ovulation Calculator",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Ovulation & Fertility Calculator | Revochamp",
     description:
       "Track ovulation, fertile windows, and cycle predictions. Free, accurate, and private.",
-    images: ["https://revochamp.com/og-ovulation.png"],
+    images: ["https://revochamp.site/og-ovulation.png"],
   },
 };
 

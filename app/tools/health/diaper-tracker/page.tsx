@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     title: "Diaper Tracker | Revochamp",
     description:
       "Log wet and dirty diapers with one tap. Track daily totals and spot changes in your baby's health.",
-    url: "https://revochamp.com/diaper-tracker",
+    url: "https://revochamp.site/diaper-tracker",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og-diaper.png",
+        url: "https://revochamp.site/og-diaper.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Diaper Tracker",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Diaper Tracker | Revochamp",
     description:
       "Track diaper changes easily. Free, private, and designed for new parents.",
-    images: ["https://revochamp.com/og-diaper.png"],
+    images: ["https://revochamp.site/og-diaper.png"],
   },
 };
 

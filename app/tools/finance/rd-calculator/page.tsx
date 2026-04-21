@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free RD Calculator - Calculate Recurring Deposit Returns',
     description: 'Calculate your Recurring Deposit maturity amount and interest earned. Supports monthly, quarterly, half-yearly, and yearly compounding.',
-    url: 'https://revochamp.com/tools/finance/rd-calculator',
+    url: 'https://revochamp.site/tools/finance/rd-calculator',
     type: 'website',
   },
   alternates: {
@@ -26,7 +26,7 @@ const jsonLd = {
   description: 'A free online tool to calculate Recurring Deposit returns and maturity amount.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.com/tools/finance/rd-calculator',
+  url: 'https://revochamp.site/tools/finance/rd-calculator',
   offers: {
     '@type': 'Offer',
     price: '0',
