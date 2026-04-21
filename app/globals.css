@@ -2643,16 +2643,26 @@ nav ul li:nth-child(n+5) { animation-delay: 0.3s; }
 /* Selection Styles                            */
 /* ============================================ */
  
-::selection {
+/* ::selection {
   background: linear-gradient(135deg, #2563eb, #7c3aed);
-  color: white;
+  color: rgb(25, 2, 2);
 }
  
 ::-moz-selection {
   background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
-}
+} */
  
+/* Force readable selection colors */
+::selection {
+  background-color: #fbbf24 !important; /* amber-400 */
+  color: #1c1917 !important; /* stone-800 */
+}
+
+::-moz-selection {
+  background-color: #fbbf24 !important;
+  color: #1c1917 !important;
+}
 /* ============================================ */
 /* Focus Styles for Accessibility              */
 /* ============================================ */
@@ -2682,3 +2692,6 @@ a:focus-visible {
 @import 'components.css';
 @import 'layout.css';
 @import 'utilities.css'; */
+
+
+

@@ -13,6 +13,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "json.revochamp.site",
       },
+        {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
     formats: ["image/avif", "image/webp"],
     // unoptimized: true, // Required for static export when using next/image

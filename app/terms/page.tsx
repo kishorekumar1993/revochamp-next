@@ -1,37 +1,39 @@
-import { Metadata } from 'next';
-import Footer from '@/components/footer';
-import TermsStructuredData from '@/components/termsStructuredData';
-import AcceptButton from '@/components/AcceptButton';
+import { Metadata } from "next";
+import Footer from "@/components/footer";
+import TermsStructuredData from "@/components/termsStructuredData";
+import AcceptButton from "@/components/AcceptButton";
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | RevoChamp User Agreement',
+  title: "Terms of Service | RevoChamp User Agreement",
   description:
-    'Review RevoChamp terms and conditions to understand your rights and responsibilities while using our platform.',
+    "Review RevoChamp terms and conditions to understand your rights and responsibilities while using our platform.",
   openGraph: {
-    title: 'Terms of Service | RevoChamp',
-    description: 'Review RevoChamp terms and conditions to understand your rights and responsibilities.',
-    url: 'https://revochamp.site/tech/terms',
-    images: ['https://revochamp.site/tech/terms-og.png'],
-    type: 'website',
+    title: "Terms of Service | RevoChamp",
+    description:
+      "Review RevoChamp terms and conditions to understand your rights and responsibilities.",
+    url: "https://revochamp.site/terms",
+    images: ["https://revochamp.site/terms-og.png"],
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@revochamp',
-    creator: '@revochamp',
-    title: 'Terms of Service | RevoChamp',
-    description: 'Review RevoChamp terms and conditions to understand your rights and responsibilities.',
-    images: ['https://revochamp.site/tech/terms-og.png'],
+    card: "summary_large_image",
+    site: "@revochamp",
+    creator: "@revochamp",
+    title: "Terms of Service | RevoChamp",
+    description:
+      "Review RevoChamp terms and conditions to understand your rights and responsibilities.",
+    images: ["https://revochamp.site/terms-og.png"],
   },
-  robots: 'index, follow, max-image-preview:large',
+  robots: "index, follow, max-image-preview:large",
   alternates: {
-    canonical: 'https://revochamp.site/tech/terms',
+    canonical: "https://revochamp.site/terms",
   },
   keywords: [
-    'terms of service RevoChamp',
-    'user agreement',
-    'platform terms',
-    'legal conditions',
-    'learning platform rules',
+    "terms of service RevoChamp",
+    "user agreement",
+    "platform terms",
+    "legal conditions",
+    "learning platform rules",
   ],
 };
 
@@ -54,9 +56,12 @@ export default function TermsPage() {
               </span>
             </h1>
             <p className="mt-4 max-w-xl text-base md:text-lg text-text-muted font-medium">
-              Clear, fair terms that protect both you and our learning community.
+              Clear, fair terms that protect both you and our learning
+              community.
             </p>
-            <p className="mt-3 text-sm text-text-light font-medium">Effective: January 2026</p>
+            <p className="mt-3 text-sm text-text-light font-medium">
+              Effective: January 2026
+            </p>
           </section>
 
           {/* Key Principles Cards */}
@@ -87,13 +92,31 @@ export default function TermsPage() {
               <h2 className="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tight">
                 Key Terms
               </h2>
-              <p className="mt-3 text-text-muted font-medium">What you need to know</p>
+              <p className="mt-3 text-text-muted font-medium">
+                What you need to know
+              </p>
             </div>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <TermCard emoji="📋" title="Use License" description="Personal, non-commercial use of our learning materials" />
-              <TermCard emoji="🎯" title="User Conduct" description="Respectful behavior and community guidelines" />
-              <TermCard emoji="🛡️" title="Intellectual Property" description="Course content is protected by copyright" />
-              <TermCard emoji="⚖️" title="Limitations" description="Clear terms about liability and warranties" />
+              <TermCard
+                emoji="📋"
+                title="Use License"
+                description="Personal, non-commercial use of our learning materials"
+              />
+              <TermCard
+                emoji="🎯"
+                title="User Conduct"
+                description="Respectful behavior and community guidelines"
+              />
+              <TermCard
+                emoji="🛡️"
+                title="Intellectual Property"
+                description="Course content is protected by copyright"
+              />
+              <TermCard
+                emoji="⚖️"
+                title="Limitations"
+                description="Clear terms about liability and warranties"
+              />
             </div>
           </section>
 
@@ -106,7 +129,7 @@ export default function TermsPage() {
           </section>
 
           {/* Additional Terms Section */}
-      {/* Acceptance CTA */}
+          {/* Acceptance CTA */}
           <section className="py-12">
             <div className="bg-gradient-to-br from-soft-gray to-white border border-light-gray rounded-2xl p-6 md:p-10 text-center">
               <span className="text-5xl">🤝</span>
@@ -114,7 +137,8 @@ export default function TermsPage() {
                 By using RevoChamp, you agree to these terms
               </h3>
               <p className="mt-3 text-text-muted text-sm md:text-base max-w-2xl mx-auto">
-                We're committed to providing a safe, fair learning environment for everyone
+                We're committed to providing a safe, fair learning environment
+                for everyone
               </p>
               {/* ✅ Client Component for interactive button */}
               <AcceptButton />
@@ -122,16 +146,20 @@ export default function TermsPage() {
           </section>
         </div>
 
-     <Footer />
- 
-       </main>
+        <Footer />
+      </main>
     </>
   );
 }
 
 // ========== Subcomponents (Server Components – no 'use client') ==========
 
-function PrincipleCard({ icon, title, description, bgColor }: {
+function PrincipleCard({
+  icon,
+  title,
+  description,
+  bgColor,
+}: {
   icon: string;
   title: string;
   description: string;
@@ -139,26 +167,50 @@ function PrincipleCard({ icon, title, description, bgColor }: {
 }) {
   return (
     <div className="bg-white border border-light-gray rounded-2xl p-6 shadow-sm">
-      <div className={`w-12 h-12 ${bgColor} rounded-xl flex items-center justify-center text-2xl`}>
+      <div
+        className={`w-12 h-12 ${bgColor} rounded-xl flex items-center justify-center text-2xl`}
+      >
         {icon}
       </div>
-      <h4 className="mt-4 text-xl font-extrabold text-text-dark tracking-tight">{title}</h4>
-      <p className="mt-2 text-text-muted text-sm leading-relaxed">{description}</p>
+      <h4 className="mt-4 text-xl font-extrabold text-text-dark tracking-tight">
+        {title}
+      </h4>
+      <p className="mt-2 text-text-muted text-sm leading-relaxed">
+        {description}
+      </p>
     </div>
   );
 }
 
-function TermCard({ emoji, title, description }: { emoji: string; title: string; description: string }) {
+function TermCard({
+  emoji,
+  title,
+  description,
+}: {
+  emoji: string;
+  title: string;
+  description: string;
+}) {
   return (
     <div className="bg-white border border-light-gray rounded-xl p-6 shadow-sm hover:shadow-md transition">
       <div className="text-4xl">{emoji}</div>
       <h4 className="mt-4 text-lg font-bold text-text-dark">{title}</h4>
-      <p className="mt-2 text-sm text-text-muted leading-relaxed">{description}</p>
+      <p className="mt-2 text-sm text-text-muted leading-relaxed">
+        {description}
+      </p>
     </div>
   );
 }
 
-function AdditionalTermCard({ icon, title, description }: { icon: string; title: string; description: string }) {
+function AdditionalTermCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: string;
+  title: string;
+  description: string;
+}) {
   return (
     <div className="bg-white/10 border border-white/20 rounded-xl p-4 flex items-center gap-3">
       <span className="text-2xl">{icon}</span>
@@ -174,7 +226,9 @@ function BulletPoint({ text }: { text: string }) {
   return (
     <div className="flex items-start gap-3 py-2">
       <div className="w-1.5 h-1.5 bg-rich-blue rounded-full mt-2 shrink-0" />
-      <p className="text-sm text-text-muted font-medium leading-relaxed">{text}</p>
+      <p className="text-sm text-text-muted font-medium leading-relaxed">
+        {text}
+      </p>
     </div>
   );
 }
@@ -186,7 +240,9 @@ function UsageTermsCard() {
         <div className="w-12 h-12 bg-rich-blue/10 rounded-xl flex items-center justify-center text-2xl">
           📋
         </div>
-        <h3 className="text-2xl font-extrabold text-text-dark tracking-tight">Use License & Access</h3>
+        <h3 className="text-2xl font-extrabold text-text-dark tracking-tight">
+          Use License & Access
+        </h3>
       </div>
       <div className="space-y-1">
         <BulletPoint text="Personal, non-commercial use of course materials is permitted" />
@@ -207,7 +263,9 @@ function UserConductCard() {
         <div className="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center text-2xl">
           🎯
         </div>
-        <h3 className="text-2xl font-extrabold text-text-dark tracking-tight">User Conduct & Responsibilities</h3>
+        <h3 className="text-2xl font-extrabold text-text-dark tracking-tight">
+          User Conduct & Responsibilities
+        </h3>
       </div>
       <div className="space-y-1">
         <BulletPoint text="Treat all community members with respect and professionalism" />
@@ -228,7 +286,9 @@ function IntellectualPropertyCard() {
         <div className="w-12 h-12 bg-rich-blue/10 rounded-xl flex items-center justify-center text-2xl">
           🛡️
         </div>
-        <h3 className="text-2xl font-extrabold text-text-dark tracking-tight">Intellectual Property</h3>
+        <h3 className="text-2xl font-extrabold text-text-dark tracking-tight">
+          Intellectual Property
+        </h3>
       </div>
       <div className="space-y-1">
         <BulletPoint text="All course materials are property of RevoChamp" />
@@ -249,7 +309,9 @@ function DisclaimerCard() {
         <div className="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center text-2xl">
           ⚠️
         </div>
-        <h3 className="text-2xl font-extrabold text-text-dark tracking-tight">Disclaimer & Limitations</h3>
+        <h3 className="text-2xl font-extrabold text-text-dark tracking-tight">
+          Disclaimer & Limitations
+        </h3>
       </div>
       <div className="space-y-1">
         <BulletPoint text="Materials provided 'as is' without warranties" />
