@@ -341,8 +341,8 @@ export default function HealthCalculatorPage() {
                   Your Details
                 </h2>
                 <div className="flex gap-1">
-                  <IconButton onClick={() => setShowHistory(true)} aria-label="History" icon="📜" />
-                  <IconButton onClick={handleReset} aria-label="Reset" icon="🔄" />
+                  <IconButton onClick={() => setShowHistory(true)} aria-label="History" icon="📜" ariaLabel={''} />
+                  <IconButton onClick={handleReset} aria-label="Reset" icon="🔄" ariaLabel={''} />
                 </div>
               </div>
 
