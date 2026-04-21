@@ -2,43 +2,48 @@ import type { Metadata } from "next";
 import FertilityAssessment from "@/components/health/components/FertilityAssessment";
 
 export const metadata: Metadata = {
-  title: "Fertility Health Assessment | Revochamp",
+  title: "Free Fertility Test for Couples (2-Min Assessment) | Revochamp",
   description:
-    "Take our free interactive fertility assessment for both partners. Get personalized insights into potential fertility factors and evidence‑based recommendations.",
+    "Take a free 2-minute fertility test for couples. Get your fertility score, identify risk factors, and receive personalized tips to improve your chances of conception.",
   keywords: [
+    "free fertility test",
+    "fertility test online free",
+    "fertility calculator for couples",
+    "chances of getting pregnant tool",
+    "ovulation + conception calculator",
     "fertility assessment",
     "fertility quiz",
     "female fertility",
     "male fertility",
-    "conception help",
-    "ovulation tracking",
-    "fertility risk factors",
     "TTC tool",
     "reproductive health",
     "Revochamp",
   ],
   openGraph: {
-    title: "Fertility Health Assessment | Revochamp",
+    title: "Free Fertility Test for Couples – Instant Score & Tips",
     description:
-      "Discover your fertility risk level with our comprehensive, science‑backed questionnaire. For women and men trying to conceive.",
-    url: "https://revochamp.com/health/fertility-assessment",
+      "Answer 21 questions about your health, lifestyle, and timing. Get a personalized fertility risk report in 2 minutes.",
+    url: "https://revochamp.com/tools/health/fertility-assessment",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/health/og-fertility.png",
+        url: "https://revochamp.com/tools/health/og-fertility.png",
         width: 1200,
         height: 630,
-        alt: "Revochamp Fertility Assessment",
+        alt: "Free Fertility Test for Couples – Revochamp",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fertility Health Assessment | Revochamp",
+    title: "Free Fertility Test for Couples (2-Min) | Revochamp",
     description:
-      "Interactive fertility quiz for couples – get personalized recommendations in 5 minutes.",
-    images: ["https://revochamp.com/health/og-fertility.png"],
+      "Check your fertility risk level with our science‑backed questionnaire. For women and men trying to conceive.",
+    images: ["https://revochamp.com/tools/health/og-fertility.png"],
+  },
+  alternates: {
+    canonical: "https://revochamp.com/tools/health/fertility-assessment",
   },
 };
 
