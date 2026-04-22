@@ -89,7 +89,10 @@ export default function MetaAnalyzerClient() {
     if (data.title) score += 25;
     if (data.description && data.description.length >= 50 && data.description.length <= 160) score += 25;
     if (data.viewport) score += 15;
-    if (data.robots && !data.robots.includes('noindex')) score += 15;
+    // if (data.robots && !data.robots.includes('noindex')) score += 15;
+if (data.robots?.includes('index')) {
+  score += 15;
+}
     if (data.canonical) score += 10;
     if (data.language) score += 10;
     return Math.min(100, score);
