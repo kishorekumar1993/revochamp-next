@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!session) {
     return {
       title: 'Mock Test | RevoChamp',
-      robots: 'noindex, follow',
+      robots: 'index, follow',
     };
   }
 
