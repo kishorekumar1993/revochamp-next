@@ -176,7 +176,7 @@ description:
 
   // Verification - Replace with actual codes
   verification: {
-    google: '56YLlB_RvfQRzIYP_38zH5rvbOppQmeWgvZvlXYu358',
+    // google: '56YLlB_RvfQRzIYP_38zH5rvbOppQmeWgvZvlXYu358',
     // google: process.env.GOOGLE_VERIFICATION_CODE || 'your-google-verification-code',
   },
 
