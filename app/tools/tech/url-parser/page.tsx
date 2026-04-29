@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free URL Parser & Analyzer',
     description: 'Break down any URL into its components: protocol, host, path, query params, and hash. Fast and privacy-first.',
-    url: 'https://yourdomain.com/tools/url-parser',
+    url: 'https://revochamp.site/tools/url-parser',
     type: 'website',
   },
   alternates: {
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to parse and analyze URL components.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/url-parser',
+  url: 'https://revochamp.site/tools/url-parser',
   offers: {
     '@type': 'Offer',
     price: '0',

@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     description:
       "Use our free compound interest calculator to estimate the future value of your investments. Add monthly contributions and choose compounding frequency.",
     type: "website",
-    url: "https://yourdomain.com/tools/compound-interest-calculator",
+    url: "https://revochamp.site/tools/compound-interest-calculator",
   },
   alternates: {
-    canonical: "https://yourdomain.com/tools/compound-interest-calculator",
+    canonical: "https://revochamp.site/tools/compound-interest-calculator",
   },
   robots: {
     index: true,

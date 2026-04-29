@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Regex Tester & Debugger',
     description: 'Test regular expressions in real time. Highlight matches, extract groups, and debug patterns instantly.',
-    url: 'https://yourdomain.com/tools/regex-tester',
+    url: 'https://revochamp.site/tools/regex-tester',
     type: 'website',
   },
   alternates: {
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to test and debug regular expressions.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/regex-tester',
+  url: 'https://revochamp.site/tools/regex-tester',
   offers: {
     '@type': 'Offer',
     price: '0',

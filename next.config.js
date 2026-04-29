@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // output: "export", // ← Enables static HTML export
-
+trailingSlash: false,
   images: {
     // domains is deprecated in newer Next.js; use remotePatterns instead
     remotePatterns: [

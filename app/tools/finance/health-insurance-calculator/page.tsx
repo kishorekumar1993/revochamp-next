@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Use our free tool to calculate the ideal health insurance sum insured. Factors: age, city tier, family size, smoking, lifestyle.",
     type: "website",
-    url: "https://yourdomain.com/tools/health-insurance-calculator",
+    url: "https://revochamp.site/tools/health-insurance-calculator",
   },
 };
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Use our free MF returns calculator to see how your SIP or lump sum investments grow over time. Get detailed year‑wise breakdown and return metrics.",
     type: "website",
-    url: "https://yourdomain.com/tools/mf-returns-calculator",
+    url: "https://revochamp.site/tools/mf-returns-calculator",
   },
 };
 

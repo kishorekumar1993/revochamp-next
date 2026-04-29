@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Unix Timestamp Converter',
     description: 'Convert Unix timestamps to dates and dates to timestamps. Supports seconds, milliseconds, and timezone selection.',
-    url: 'https://yourdomain.com/tools/timestamp-converter',
+    url: 'https://revochamp.site/tools/timestamp-converter',
     type: 'website',
   },
   alternates: {
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to convert between Unix timestamps and human-readable dates.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/timestamp-converter',
+  url: 'https://revochamp.site/tools/timestamp-converter',
   offers: {
     '@type': 'Offer',
     price: '0',

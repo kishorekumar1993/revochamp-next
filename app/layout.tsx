@@ -288,7 +288,11 @@ const organizationSchema = {
   ],
   address: {
     '@type': 'PostalAddress',
-    addressCountry: 'US',
+    addressCountry: 'IN',
+      streetAddress: 'Tiruvekadu',
+  addressLocality: 'Chennai',
+  addressRegion: 'Tamil Nadu',
+  postalCode: '600077',
   },
   contactPoint: {
     '@type': 'ContactPoint',

@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     description:
       "Use our free personal loan calculator to estimate monthly EMI, total interest, and year-wise repayment schedule. Make informed borrowing decisions.",
     type: "website",
-    url: "https://yourdomain.com/tools/personal-loan-calculator",
+    url: "https://revochamp.site/tools/personal-loan-calculator",
   },
   alternates: {
-    canonical: "https://yourdomain.com/tools/personal-loan-calculator",
+    canonical: "https://revochamp.site/tools/personal-loan-calculator",
   },
   robots: {
     index: true,

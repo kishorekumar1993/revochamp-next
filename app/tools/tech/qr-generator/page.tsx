@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free QR Code Generator',
     description: 'Generate custom QR codes for URLs, text, and more. Download as PNG, customize colors and size.',
-    url: 'https://yourdomain.com/tools/qr-generator',
+    url: 'https://revochamp.site/tools/qr-generator',
     type: 'website',
   },
   alternates: {
@@ -26,7 +26,7 @@ const jsonLd = {
   description: 'A free, online tool to generate custom QR codes.',
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/qr-generator',
+  url: 'https://revochamp.site/tools/qr-generator',
   offers: {
     '@type': 'Offer',
     price: '0',

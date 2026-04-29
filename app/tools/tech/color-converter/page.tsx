@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Color Converter',
     description: 'Convert colors between HEX, RGB, HSL, and CMYK. Real‑time preview and easy copying.',
-    url: 'https://yourdomain.com/tools/color-converter',
+    url: 'https://revochamp.site/tools/color-converter',
     type: 'website',
   },
   alternates: {
@@ -26,7 +26,7 @@ const jsonLd = {
   description: 'A free, online tool to convert colors between HEX, RGB, HSL, and CMYK formats.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/color-converter',
+  url: 'https://revochamp.site/tools/color-converter',
   offers: {
     '@type': 'Offer',
     price: '0',

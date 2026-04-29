@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Calculate your maximum eligible loan amount based on monthly income, obligations, interest rate, and tenure.",
     type: "website",
-    url: "https://yourdomain.com/tools/loan-eligibility",
+    url: "https://revochamp.site/tools/loan-eligibility",
   },
 };
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Meta Tag Analyzer',
     description: 'Analyze meta tags for any website. Check SEO, Open Graph, and Twitter Card tags.',
-    url: 'https://yourdomain.com/tools/meta-analyzer',
+    url: 'https://revochamp.site/tools/meta-analyzer',
     type: 'website',
   },
   alternates: {
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to analyze and validate meta tags for any website.',
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/meta-analyzer',
+  url: 'https://revochamp.site/tools/meta-analyzer',
   offers: {
     '@type': 'Offer',
     price: '0',

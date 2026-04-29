@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     description:
       "Use our free education loan calculator to estimate monthly EMI, total interest, and repayment schedule. Compare different loan options and plan smartly.",
     type: "website",
-    url: "https://yourdomain.com/tools/education-loan-calculator",
+    url: "https://revochamp.site/tools/education-loan-calculator",
   },
   alternates: {
-    canonical: "https://yourdomain.com/tools/education-loan-calculator",
+    canonical: "https://revochamp.site/tools/education-loan-calculator",
   },
   robots: {
     index: true,

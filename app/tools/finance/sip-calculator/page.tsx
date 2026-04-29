@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Use our free SIP calculator to estimate the growth of your monthly investments over time. Compare different amounts, returns, and tenures.",
     type: "website",
-    url: "https://yourdomain.com/tools/sip-calculator",
+    url: "https://revochamp.site/tools/sip-calculator",
   },
 };
 

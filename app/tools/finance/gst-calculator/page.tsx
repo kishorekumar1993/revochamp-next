@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     description:
       "Calculate GST for any product or service. Enter net or gross amount, select a rate, and get accurate GST amounts.",
     type: "website",
-    url: "https://yourdomain.com/tools/gst-calculator",
+    url: "https://revochamp.site/tools/gst-calculator",
   },
   alternates: {
-    canonical: "https://yourdomain.com/tools/gst-calculator",
+    canonical: "https://revochamp.site/tools/gst-calculator",
   },
   robots: {
     index: true,

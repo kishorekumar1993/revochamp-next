@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Use our free home loan calculator to estimate monthly EMI, total interest, and repayment schedule. Compare different loan amounts and tenures.",
     type: "website",
-    url: "https://yourdomain.com/tools/home-loan-calculator",
+    url: "https://revochamp.site/tools/home-loan-calculator",
   },
 };
 

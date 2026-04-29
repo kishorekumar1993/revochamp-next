@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Lorem Ipsum Generator',
     description: 'Generate Lorem Ipsum placeholder text for your designs. Customize paragraphs, sentences, or words.',
-    url: 'https://yourdomain.com/tools/lorem-ipsum',
+    url: 'https://revochamp.site/tools/lorem-ipsum',
     type: 'website',
   },
   alternates: {
@@ -26,7 +26,7 @@ const jsonLd = {
   description: 'A free, online tool to generate Lorem Ipsum placeholder text.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/lorem-ipsum',
+  url: 'https://revochamp.site/tools/lorem-ipsum',
   offers: {
     '@type': 'Offer',
     price: '0',

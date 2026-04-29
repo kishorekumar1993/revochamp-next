@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free CSV to JSON Converter',
     description: 'Convert CSV data to JSON format instantly. Supports custom delimiters, header rows, and pretty printing.',
-    url: 'https://yourdomain.com/tools/csv-to-json',
+    url: 'https://revochamp.site/tools/csv-to-json',
     type: 'website',
   },
   alternates: {
@@ -26,7 +26,7 @@ const jsonLd = {
   description: 'A free, online tool to convert CSV data to JSON format.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/csv-to-json',
+  url: 'https://revochamp.site/tools/csv-to-json',
   offers: {
     '@type': 'Offer',
     price: '0',

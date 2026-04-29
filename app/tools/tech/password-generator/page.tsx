@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Strong Password Generator',
     description: 'Generate secure random passwords. Customize length, include numbers, symbols, and check strength instantly.',
-    url: 'https://yourdomain.com/tools/password-generator',
+    url: 'https://revochamp.site/tools/password-generator',
     type: 'website',
   },
   alternates: {
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to generate strong, random passwords.',
   applicationCategory: 'SecurityApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/password-generator',
+  url: 'https://revochamp.site/tools/password-generator',
   offers: {
     '@type': 'Offer',
     price: '0',

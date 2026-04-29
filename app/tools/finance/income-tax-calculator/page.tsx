@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     description:
       "Use our free income tax calculator to estimate your tax liability under both regimes. Updated with Budget 2025 changes: ₹12 lakh tax-free, ₹75,000 standard deduction.",
     type: "website",
-    url: "https://yourdomain.com/tools/income-tax-calculator",
+    url: "https://revochamp.site/tools/income-tax-calculator",
   },
   alternates: {
-    canonical: "https://yourdomain.com/tools/income-tax-calculator",
+    canonical: "https://revochamp.site/tools/income-tax-calculator",
   },
   robots: {
     index: true,

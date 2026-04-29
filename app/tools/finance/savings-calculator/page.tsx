@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Calculate future value of your savings with our easy tool. Compare lump sum vs monthly contributions.",
     type: "website",
-    url: "https://yourdomain.com/tools/savings-calculator",
+    url: "https://revochamp.site/tools/savings-calculator",
   },
 };
 

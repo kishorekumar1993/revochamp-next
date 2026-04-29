@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free JWT Debugger & Decoder',
     description: 'Decode and inspect JWT tokens instantly. View header, payload, signature, and validate timestamps. 100% client-side.',
-    url: 'https://yourdomain.com/tools/jwt-debugger',
+    url: 'https://revochamp.site/tools/jwt-debugger',
     type: 'website',
   },
   alternates: {
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to decode and inspect JSON Web Tokens (JWT).',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/jwt-debugger',
+  url: 'https://revochamp.site/tools/jwt-debugger',
   offers: {
     '@type': 'Offer',
     price: '0',

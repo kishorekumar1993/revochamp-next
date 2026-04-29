@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free SQL Formatter & Beautifier',
     description: 'Format and beautify SQL queries instantly. Supports MySQL, PostgreSQL, SQLite. Copy, clear, and sample queries.',
-    url: 'https://yourdomain.com/tools/sql-formatter',
+    url: 'https://revochamp.site/tools/sql-formatter',
     type: 'website',
   },
   alternates: {
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to format and beautify SQL queries.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/sql-formatter',
+  url: 'https://revochamp.site/tools/sql-formatter',
   offers: {
     '@type': 'Offer',
     price: '0',

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Find out how much to invest monthly to achieve your financial goals. Plan for retirement, education, down payment, and more.",
     type: "website",
-    url: "https://yourdomain.com/tools/sip-goal-planner",
+    url: "https://revochamp.site/tools/sip-goal-planner",
   },
 };
 

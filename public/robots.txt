@@ -9,6 +9,9 @@ Disallow: /*utm_
 User-agent: Bingbot
 Crawl-delay: 1
 
+User-agent: Googlebot
+Allow: /
+
 # Optional: AI bots (decide based on strategy)
 User-agent: GPTBot
 Allow: /

@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     description:
       "Explore our collection of free, instant, client-side tools for finance, tech, education, health, and more.",
     type: "website",
-    url: "https://yourdomain.com/tools",
+    url: "https://revochamp.site/tools",
   },
   alternates: {
-    canonical: "https://yourdomain.com/tools",
+    canonical: "https://revochamp.site/tools",
   },
   robots: {
     index: true,

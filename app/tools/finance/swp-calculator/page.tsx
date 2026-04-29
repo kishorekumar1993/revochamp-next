@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Use our free SWP calculator to determine how long your investment corpus will last with fixed periodic withdrawals. Perfect for retirement planning.",
     type: "website",
-    url: "https://yourdomain.com/tools/swp-calculator",
+    url: "https://revochamp.site/tools/swp-calculator",
   },
 };
 

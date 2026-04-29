@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Use our free tool to calculate the ideal life insurance sum assured based on your income, expenses, debts, and dependents.",
     type: "website",
-    url: "https://yourdomain.com/tools/life-insurance-calculator",
+    url: "https://revochamp.site/tools/life-insurance-calculator",
   },
 };
 

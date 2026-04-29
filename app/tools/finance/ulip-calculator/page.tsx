@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Estimate the final value of your ULIP after accounting for all charges. Compare with a pure investment alternative to decide if ULIP is right for you.",
     type: "website",
-    url: "https://yourdomain.com/tools/ulip-calculator",
+    url: "https://revochamp.site/tools/ulip-calculator",
   },
 };
 

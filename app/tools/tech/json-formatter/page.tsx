@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free JSON Formatter & Validator',
     description: 'Beautify, minify, and validate JSON data instantly. A fast, privacy-first tool for developers.',
-    url: 'https://yourdomain.com/tools/json-formatter',
+    url: 'https://revochamp.site/tools/json-formatter',
     type: 'website',
   },
   alternates: {
@@ -24,7 +24,7 @@ const jsonLd = {
   description: 'A free, online tool to format, beautify, minify, and validate JSON data.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://yourdomain.com/tools/json-formatter',
+  url: 'https://revochamp.site/tools/json-formatter',
   offers: {
     '@type': 'Offer',
     price: '0',

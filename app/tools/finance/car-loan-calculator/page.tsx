@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     description:
       "Use our free car loan calculator to estimate monthly EMI, total interest, and repayment schedule. Compare loan options and make an informed decision.",
     type: "website",
-    url: "https://yourdomain.com/tools/car-loan-calculator",
+    url: "https://revochamp.site/tools/car-loan-calculator",
   },
   alternates: {
-    canonical: "https://yourdomain.com/tools/car-loan-calculator",
+    canonical: "https://revochamp.site/tools/car-loan-calculator",
   },
   robots: {
     index: true,

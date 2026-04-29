@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Use our free lump sum calculator to estimate the maturity value of a single investment with compound interest. Plan your long‑term goals.",
     type: "website",
-    url: "https://yourdomain.com/tools/lumpsum-calculator",
+    url: "https://revochamp.site/tools/lumpsum-calculator",
   },
 };
 

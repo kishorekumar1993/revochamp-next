@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Use our free tool to calculate the ideal term insurance cover for your family. Based on financial goals and personal details.",
     type: "website",
-    url: "https://yourdomain.com/tools/term-insurance-calculator",
+    url: "https://revochamp.site/tools/term-insurance-calculator",
   },
 };
 
