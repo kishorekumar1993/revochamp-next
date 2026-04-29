@@ -1,0 +1,24 @@
+
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <sitemap>
+    <loc>https://revochamp.site/blog/sitemap-entertainment.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://revochamp.site/blog/sitemap-tech.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://revochamp.site/blog/sitemap-health.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://revochamp.site/blog/sitemap-education.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://revochamp.site/blog/sitemap-consumer.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://revochamp.site/blog/sitemap-startup.xml</loc>
+  </sitemap>
+
+  
+</sitemapindex>
