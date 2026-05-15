@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Free online developer tools and utilities. JSON formatter, Base64 encoder, JWT debugger, regex tester, hash generator, QR code creator, and more. All client-side and privacy-first.",
 
   alternates: {
-    canonical: "https://revochamp.site/tools/tech/",
+    canonical: "https://revochamp.site/tools/tech",
   },
 
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Free Developer Tools & Utilities | DevTools",
     description:
       "Boost your productivity with free online developer tools.",
-    url: "https://revochamp.site/tools/tech/",
+    url: "https://revochamp.site/tools/tech",
     siteName: "Revochamp",
     images: [
       {

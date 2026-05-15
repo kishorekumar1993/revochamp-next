@@ -37,6 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    // Add more routes as needed
+   // Developer Tools
+    {
+      url: `${baseUrl}/tools/tech`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+  
   ]
 }
