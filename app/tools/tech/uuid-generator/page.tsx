@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free UUID Generator',
     description: 'Generate random UUID v4 identifiers. Supports batch generation, formatting options, and copy to clipboard.',
-    url: 'https://revochamp.site/tools/uuid-generator',
+    url: 'https://revochamp.site/tools/tech/uuid-generator',
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/uuid-generator',
+    canonical: '/tools/tech/uuid-generator',
   },
 };
 
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to generate random UUID v4 identifiers.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.site/tools/uuid-generator',
+  url: 'https://revochamp.site/tools/tech/uuid-generator',
   offers: {
     '@type': 'Offer',
     price: '0',

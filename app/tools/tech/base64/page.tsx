@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Base64 Encoder & Decoder',
     description: 'Encode plain text to Base64 or decode Base64 strings instantly. A fast, privacy-first tool for developers.',
-    url: 'https://revochamp.site/tools/base64',
+    url: 'https://revochamp.site/tools/tech/base64',
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/base64',
+    canonical: '/tools/tech/base64',
   },
 };
 
@@ -26,7 +26,7 @@ const jsonLd = {
   description: 'A free, online tool to encode text to Base64 and decode Base64 back to plain text.',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.site/tools/base64',
+  url: 'https://revochamp.site/tools/tech/base64',
   offers: {
     '@type': 'Offer',
     price: '0',

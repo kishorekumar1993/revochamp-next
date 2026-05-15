@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     title: "Breastfeeding Tracker | Revochamp",
     description:
       "Track nursing sessions, monitor feeding patterns, and get reminders. Simple, private, and free for new parents.",
-    url: "https://revochamp.site/breastfeeding-tracker",
+    url: "https://revochamp.site/tools/health/breastfeeding-tracker",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.site/og-breastfeeding.png",
+        url: "https://revochamp.site/tools/health/og-breastfeeding.png",
         width: 1200,
         height: 630,
         alt: "Revochamp Breastfeeding Tracker",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Breastfeeding Tracker | Revochamp",
     description:
       "Log nursing sessions easily. Free timer with side tracking and daily summaries.",
-    images: ["https://revochamp.site/og-breastfeeding.png"],
+    images: ["https://revochamp.site/tools/health/og-breastfeeding.png"],
   },
 };
 

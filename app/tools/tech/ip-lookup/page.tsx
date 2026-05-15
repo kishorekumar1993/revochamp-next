@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free IP Lookup & Geolocation',
     description: 'Find detailed information about any IP address. Location, ISP, timezone, and more.',
-    url: 'https://revochamp.site/tools/ip-lookup',
+    url: 'https://revochamp.site/tools/tech/ip-lookup',
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/ip-lookup',
+    canonical: '/tools/tech/ip-lookup',
   },
 };
 
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to lookup geolocation and information for any IP address.',
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.site/tools/ip-lookup',
+  url: 'https://revochamp.site/tools/tech/ip-lookup',
   offers: {
     '@type': 'Offer',
     price: '0',

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Image Compressor',
     description: 'Compress JPEG and PNG images instantly in your browser. Adjust quality, preview results, and download optimized files.',
-    url: 'https://revochamp.site/tools/image-compressor',
+    url: 'https://revochamp.site/tools/tech/image-compressor',
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/image-compressor',
+    canonical: '/tools/tech/image-compressor',
   },
 };
 
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to compress JPEG and PNG images directly in the browser.',
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.site/tools/image-compressor',
+  url: 'https://revochamp.site/tools/tech/image-compressor',
   offers: {
     '@type': 'Offer',
     price: '0',

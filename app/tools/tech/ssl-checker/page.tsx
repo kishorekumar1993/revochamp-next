@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free SSL Certificate Checker',
     description: 'Verify SSL/TLS certificates for any domain. Check expiration, issuer, SANs, and more.',
-    url: 'https://revochamp.site/tools/ssl-checker',
+    url: 'https://revochamp.site/tools/tech/ssl-checker',
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/ssl-checker',
+    canonical: '/tools/tech/ssl-checker',
   },
 };
 
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to verify SSL/TLS certificates for any domain.',
   applicationCategory: 'SecurityApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.site/tools/ssl-checker',
+  url: 'https://revochamp.site/tools/tech/ssl-checker',
   offers: {
     '@type': 'Offer',
     price: '0',

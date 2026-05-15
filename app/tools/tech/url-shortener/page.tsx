@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free URL Shortener',
     description: 'Shorten long URLs instantly. Create short links for social media, emails, or anywhere.',
-    url: 'https://revochamp.site/tools/url-shortener',
+    url: 'https://revochamp.site/tools/tech/url-shortener',
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/url-shortener',
+    canonical: '/tools/tech/url-shortener',
   },
 };
 
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to shorten long URLs into compact links.',
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.site/tools/url-shortener',
+  url: 'https://revochamp.site/tools/tech/url-shortener',
   offers: {
     '@type': 'Offer',
     price: '0',

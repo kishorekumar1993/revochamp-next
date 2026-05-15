@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Hash Generator',
     description: 'Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes from text or files. 100% client‑side.',
-    url: 'https://revochamp.site/tools/hash-generator',
+    url: 'https://revochamp.site/tools/tech/hash-generator',
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/hash-generator',
+    canonical: '/tools/tech/hash-generator',
   },
 };
 
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to generate cryptographic hashes using MD5, SHA-1, SHA-256, SHA-384, and SHA-512 algorithms.',
   applicationCategory: 'SecurityApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.site/tools/hash-generator',
+  url: 'https://revochamp.site/tools/tech/hash-generator',
   offers: {
     '@type': 'Offer',
     price: '0',

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Password Strength Meter',
     description: 'Check how strong your password is. Real-time analysis with entropy calculation and crack time estimation.',
-    url: 'https://revochamp.site/tools/password-strength',
+    url: 'https://revochamp.site/tools/tech/password-strength',
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/password-strength',
+    canonical: 'https://revochamp.site/tools/tech/password-strength',
   },
 };
 
@@ -25,7 +25,7 @@ const jsonLd = {
   description: 'A free, online tool to check password strength and security.',
   applicationCategory: 'SecurityApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.site/tools/password-strength',
+  url: 'https://revochamp.site/tools/tech/password-strength',
   offers: {
     '@type': 'Offer',
     price: '0',

@@ -27,30 +27,6 @@ export function BlogStructuredDataList({ posts }: { posts: { slug: string; title
   );
 }
 
-// export function BlogStructuredDataList({ posts }: { posts: BlogSummary[] }) {
-//     if (!posts || posts.length === 0) return null; // ✅ prevent empty duplicate
-
-
-//   const itemListElement = posts.map((post, idx) => ({
-//     '@type': 'ListItem',
-//     position: idx + 1,
-//     url: `https://revochamp.site/blog/${post.slug}`,
-//     name: post.title,
-//   }));
-//   const jsonLd = {
-//     '@context': 'https://schema.org',
-//     '@type': 'ItemList',
-//     itemListElement,
-//     numberOfItems: posts.length,
-//   };
-//   return (
-//     <script
-//       id="blog-itemlist-schema"   // <-- ADD THIS LINE
-//       type="application/ld+json"
-//       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-//     />
-//   );
-// }
 
 export function BlogPostStructuredData({ post }: { post: BlogPost }) {
   const jsonLd = {

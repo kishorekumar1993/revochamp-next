@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Unit Converter',
     description: 'Convert between metric and imperial units for length, mass, temperature, volume, and more. Fast, accurate, and privacy‑first.',
-    url: 'https://revochamp.site/tools/unit-converter',
+    url: 'https://revochamp.site/tools/tech/unit-converter',
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/unit-converter',
+    canonical: '/tools/tech/unit-converter',
   },
 };
 
@@ -26,7 +26,7 @@ const jsonLd = {
   description: 'A free, online tool to convert between various units of measurement.',
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
-  url: 'https://revochamp.site/tools/unit-converter',
+  url: 'https://revochamp.site/tools/tech/unit-converter',
   offers: {
     '@type': 'Offer',
     price: '0',
