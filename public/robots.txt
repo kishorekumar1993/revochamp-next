@@ -25,3 +25,4 @@ Allow: /
 # Sitemaps
 Sitemap: https://revochamp.site/sitemap.xml
 Sitemap: https://revochamp.site/blog/sitemap.xml
+Sitemap: https://revochamp.site/tech/sitemap.xml
