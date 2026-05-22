@@ -31,21 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-<<<<<<< HEAD
-     {
-      url: `${baseUrl}/tech/courses`,  // ✅ Added missing route
-=======
-    {
-      url: `${baseUrl}/tools/tech`,
->>>>>>> 184e6867 (commited)
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-<<<<<<< HEAD
-     {
-      url: `${baseUrl}/tools/tech`,  // ✅ Added missing route
-=======
     {
       url: `${baseUrl}/interview`,
       lastModified: new Date(),
@@ -54,18 +39,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/tools`,
->>>>>>> 184e6867 (commited)
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-   // Developer Tools
     {
       url: `${baseUrl}/tools/tech`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-  
+    // Add more routes as needed
   ]
 }

@@ -24,20 +24,26 @@ export interface ScreenConfig {
 }
 
 export async function fetchTopics(category: string): Promise<MockTutorialTopic[]> {
-  const res = await fetch(
-    `https://json.revochamp.site/mockinterview/${category}/topics.json`,
-    { next: { revalidate: 10 } }
-  );
-  if (!res.ok) throw new Error('Failed to fetch topics');
-  const data = await res.json();
-  return data.map((item: any) => ({
-    slug: item.slug,
-    title: item.title,
-    emoji: item.emoji || '📘',
-    category: item.category || 'Other',
-    level: item.level || 'All Levels',
-    estimatedHours: item.estimatedHours ? Number(item.estimatedHours) : undefined,
-  }));
+  try {
+    const res = await fetch(
+      `https://json.revochamp.site/mockinterview/${category}/topics.json`,
+      { next: { revalidate: 10 } }
+    );
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const text = await res.text();
+    if (!text || text.trim() === '') throw new Error('Empty response');
+    const data = JSON.parse(text);
+    return data.map((item: any) => ({
+      slug: item.slug,
+      title: item.title,
+      emoji: item.emoji || '📘',
+      category: item.category || 'Other',
+      level: item.level || 'All Levels',
+      estimatedHours: item.estimatedHours ? Number(item.estimatedHours) : undefined,
+    }));
+  } catch (error: any) {
+    throw new Error(error.message || 'Failed to fetch topics');
+  }
 }
 
 export async function fetchConfig(category: string): Promise<ScreenConfig | null> {

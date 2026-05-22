@@ -143,11 +143,21 @@ export async function generateMetadata({
       },
       verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
     };
-  } catch (error) {
-    console.error("Metadata generation failed for:", slug, error);
+  } catch (error: any) {
+    // Silently skip expected 404s (content not yet published)
+    // Do NOT set index:false — keep the page indexable with fallback metadata
+    const slugTitle = slug
+      .split('-')
+      .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
+    const catTitle = category
+      .split('-')
+      .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
     return {
-      title: "Tutorial Not Found | Revochamp",
-      robots: { index: false },
+      title: `${slugTitle} | Learn ${catTitle} | RevoChamp`,
+      description: `Learn ${slugTitle} in ${catTitle} with tutorials, examples, and quizzes on RevoChamp.`,
+      robots: { index: true, follow: true },
     };
   }
 }

@@ -19,36 +19,48 @@ export async function getAllCategories(): Promise<{ slug: string }[]> {
 
 
 export async function fetchTopics(category: string): Promise<TutorialTopic[]> {
-  const res = await fetch(`${BASE_URL}/${category.toLowerCase()}/topics.json`, {
-    next: {revalidate: 10 }, // Revalidate every hour
-  });
-  if (!res.ok) throw new Error('Failed to fetch topics');
-  return res.json();
+  try {
+    const res = await fetch(`${BASE_URL}/${category.toLowerCase()}/topics.json`, {
+      next: { revalidate: 10 },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const text = await res.text();
+    if (!text || text.trim() === '') throw new Error('Empty response');
+    return JSON.parse(text);
+  } catch (error: any) {
+    throw new Error(error.message || 'Failed to fetch topics');
+  }
 }
 
 
 export async function fetchTutorial(category: string, slug: string): Promise<TutorialData> {
-  const res = await fetch(`${BASE_URL}/${category}/${slug}.json`, { next: {revalidate: 10 } });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const json = await res.json();
+  try {
+    const res = await fetch(`${BASE_URL}/${category}/${slug}.json`, { next: { revalidate: 10 } });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const text = await res.text();
+    if (!text || text.trim() === '') throw new Error('Empty response');
+    const json = JSON.parse(text);
 
-  return {
-    title: json.title,
-    subtitle: json.subtitle,
-    difficulty: json.difficulty,
-    readTime: json.readTime,
-    meta: json.meta,
-    faq: json.faq || [],
-    content: parseContent(json.content || []),
-    quiz: (json.quiz || []).map((q: any) => ({
-      question: q.question,
-      options: q.options,
-      answer: q.answer,
-      explanation: q.explanation,
-    })),
-    defaultCode: json.tryEditor?.defaultCode || '',
-    relatedSlugs: json.related || [],
-  };
+    return {
+      title: json.title,
+      subtitle: json.subtitle,
+      difficulty: json.difficulty,
+      readTime: json.readTime,
+      meta: json.meta,
+      faq: json.faq || [],
+      content: parseContent(json.content || []),
+      quiz: (json.quiz || []).map((q: any) => ({
+        question: q.question,
+        options: q.options,
+        answer: q.answer,
+        explanation: q.explanation,
+      })),
+      defaultCode: json.tryEditor?.defaultCode || '',
+      relatedSlugs: json.related || [],
+    };
+  } catch (error: any) {
+    throw new Error(error.message || `Failed to fetch tutorial: ${category}/${slug}`);
+  }
 }
 
 function parseContent(raw: any[]): ContentItem[] {
