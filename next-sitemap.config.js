@@ -1,24 +1,14 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: 'https://revochamp.site',
-  generateRobotsTxt: true,
-  generateIndexSitemap: true,
+  // ✅ IMPORTANT: Keep false — we manage robots.txt manually in public/robots.txt
+  // Setting true would OVERWRITE public/robots.txt on every build and lose our custom sitemap entries
+  generateRobotsTxt: false,
+  generateIndexSitemap: false,
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
   exclude: ['/api/*'],
-  robotsTxtOptions: {
-    policies: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api/*', '/admin/*'],
-      },
-    ],
-    additionalSitemaps: [
-      'https://revochamp.site/server-sitemap.xml',
-    ],
-  },
   transform: async (config, path) => {
     // Custom priority based on path
     let priority = 0.7;

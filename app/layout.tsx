@@ -174,10 +174,9 @@ description:
     },
   },
 
-  // Verification - Replace with actual codes
+  // Verification — set NEXT_PUBLIC_GOOGLE_VERIFICATION in Vercel environment variables
   verification: {
-    // google: '56YLlB_RvfQRzIYP_38zH5rvbOppQmeWgvZvlXYu358',
-    // google: process.env.GOOGLE_VERIFICATION_CODE || 'your-google-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || '',
   },
 
   // Canonical URL
