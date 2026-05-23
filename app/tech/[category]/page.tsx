@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props) {
     topicCount: topics.length,
     popularTopics,
     canonicalUrl: `https://revochamp.site/tech/${category.toLowerCase()}`,
-    ogImageUrl: `https://revochamp.site/tech/og-images/${category.toLowerCase()}.png`,
+    ogImageUrl: `https://revochamp.site/og-default.png`,
     pageTitle: `${capitalized} Tutorials | Learn ${capitalized} Programming | RevoChamp`,
     metaDescription: `Master ${capitalized} with ${topics.length}+ free tutorials. Learn ${popularTopics.slice(0, 3).join(', ')}, and more. Step-by-step guides for beginners to advanced developers.`,
     keywords: [

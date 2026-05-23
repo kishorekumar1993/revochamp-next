@@ -26,13 +26,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Free Programming Courses | RevoChamp",
       description: `Access ${courseCount}+ free programming courses. All courses 100% free with certificates.`,
       url: "https://revochamp.site/tech/courses",
-      images: [{ url: "https://revochamp.site/tech/og-image-courses.jpg" }],
+      images: [{ url: "https://revochamp.site/og-default.png" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Free Programming Courses | RevoChamp",
       description: `Access ${courseCount}+ free programming courses. Learn Frontend, Backend, AI, DevOps and more.`,
-      images: ["https://revochamp.site/tech/og-image-courses.jpg"],
+      images: ["https://revochamp.site/og-default.png"],
     },
   };
 }

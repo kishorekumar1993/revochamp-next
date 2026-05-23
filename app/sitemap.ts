@@ -3,11 +3,154 @@ import { MetadataRoute } from 'next'
 // ✅ Required for static export
 export const dynamic = 'force-static'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const fallbackCategories = [
+  'html',
+  'javascript',
+  'reactjs',
+  'typescript',
+  'tailwind-css',
+  'angular',
+  'vuejs',
+  'web-performance-optimization',
+  'nodejs-express',
+  'python-backend',
+  'graphql-api-design',
+  'java-spring-boot',
+  'go-backend-development',
+  'microservices-architecture',
+  'docker-kubernetes',
+  'cicd-pipelines',
+  'terraform-essentials',
+  'monitoring-prometheus',
+  'linux-for-devops',
+  'machine-learning-basics',
+  'deep-learning',
+  'nlp-with-python',
+  'computer-vision',
+  'generative-ai',
+  'flutter',
+  'reactnative',
+  'android-kotlin',
+  'ios-swift',
+  'flutter-advanced',
+  'aws-fundamentals',
+  'azure-cloud-essentials',
+  'google-cloud-platform',
+  'cloud-architecture-design',
+  'serverless-architecture',
+  'cloud-security',
+  'sql-fundamentals',
+  'advanced-sql-optimization',
+  'mongodb-complete-guide',
+  'postgresql-deep-dive',
+  'redis-caching',
+  'database-design-architecture',
+  'software-testing-fundamentals',
+  'automation-testing-selenium',
+  'api-testing-postman',
+  'performance-testing',
+  'unit-testing-tdd',
+  'mobile-app-testing',
+  'cyber-security-fundamentals',
+  'ethical-hacking',
+  'web-security',
+  'network-security',
+  'cloud-security-cyber',
+  'security-operations-soc',
+  'ui-ux-fundamentals',
+  'figma-mastery',
+  'ux-research',
+  'wireframing-prototyping',
+  'design-systems-ui-architecture',
+  'mobile-app-ui-design',
+  'system-design-fundamentals',
+  'high-level-design',
+  'low-level-design',
+  'scalable-microservices',
+  'real-time-systems',
+  'system-design-interview',
+  'git-github-mastery',
+  'vs-code-productivity',
+  'postman-api-testing',
+  'docker-for-developers',
+  'linux-command-line',
+  'jira-agile-tools',
+  'dsa-for-interviews',
+  'coding-interview-problems',
+  'system-design-interview-prep',
+  'frontend-interview-prep',
+  'backend-interview-prep',
+  'hr-behavioral-interviews',
+];
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://revochamp.site'
   const now = new Date()
 
-  return [
+  let dynamicItems: MetadataRoute.Sitemap = [];
+
+  try {
+    const res = await fetch('https://json.revochamp.site/tech/category.json');
+    if (res.ok) {
+      const data = await res.json();
+      const courses = data.courses || [];
+
+      // 1. Add course main category pages (e.g. /tech/html, /tech/reactjs)
+      courses.forEach((course: any) => {
+        dynamicItems.push({
+          url: `${baseUrl}/tech/${course.slug}`,
+          lastModified: now,
+          changeFrequency: 'weekly',
+          priority: 0.8,
+        });
+      });
+
+      // 2. Fetch topics for each category and add lesson URLs in parallel
+      const topicsPromises = courses.map(async (course: any) => {
+        const slug = course.slug;
+        try {
+          const topicsRes = await fetch(`https://json.revochamp.site/${slug}/topics.json`);
+          if (topicsRes.ok) {
+            const topicsData = await topicsRes.json();
+            return topicsData.map((topic: any) => ({
+              url: `${baseUrl}/tech/${slug}/${topic.slug}`,
+              lastModified: now,
+              changeFrequency: 'monthly',
+              priority: 0.7,
+            }));
+          }
+        } catch (e) {
+          // ignore
+        }
+        return [];
+      });
+
+      const allTopicsResults = await Promise.all(topicsPromises);
+      allTopicsResults.forEach((topicsList) => {
+        dynamicItems = dynamicItems.concat(topicsList);
+      });
+
+      // 3. Add all mock interview categories
+      const apiCategories = [...new Set(courses.map((c: any) => c.category))] as string[];
+      const apiSlugs = apiCategories.map((cat) =>
+        cat.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+      );
+      const allInterviewSlugs = [...new Set([...apiSlugs, ...fallbackCategories])].filter(Boolean);
+
+      allInterviewSlugs.forEach((slug) => {
+        dynamicItems.push({
+          url: `${baseUrl}/interview/${slug}`,
+          lastModified: now,
+          changeFrequency: 'weekly',
+          priority: 0.8,
+        });
+      });
+    }
+  } catch (err) {
+    console.error('Error generating dynamic sitemap:', err);
+  }
+
+  const staticItems: MetadataRoute.Sitemap = [
     // ─── Home ───────────────────────────────────────────────
     {
       url: baseUrl,
@@ -19,12 +162,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ─── Tech / Courses ─────────────────────────────────────
     {
       url: `${baseUrl}/tech/courses`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tech/flutter`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -515,5 +652,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.4,
     },
-  ]
+  ];
+
+  return [...staticItems, ...dynamicItems];
 }

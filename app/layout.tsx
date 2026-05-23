@@ -200,18 +200,11 @@ description:
     siteName: 'RevoChamp',
     images: [
       {
-        url: `${BASE_URL}/og-image-home.jpg`,
+        url: `${BASE_URL}/og-default.png`,
         width: 1200,
         height: 630,
         alt: 'RevoChamp - Free Programming Courses',
-        type: 'image/jpeg',
-      },
-      {
-        url: `${BASE_URL}/og-image-courses.jpg`,
-        width: 1200,
-        height: 630,
-        alt: 'RevoChamp Course Library',
-        type: 'image/jpeg',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -226,7 +219,7 @@ description:
     title: 'RevoChamp - Free Programming Courses',
     description: 'Master modern tech skills with 100% free programming courses. Start your journey today!',
     images: {
-      url: `${BASE_URL}/twitter-image.jpg`,
+      url: `${BASE_URL}/og-default.png`,
       alt: 'RevoChamp Twitter Card',
     },
   },

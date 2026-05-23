@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { Course, CategoryItem } from "@/types/course";
 import { motion } from "framer-motion";
 import { Suspense } from "react";
+import Link from "next/link";
 
 interface Props {
   initialCourses: Course[];
@@ -394,16 +395,16 @@ export default function CourseClient({ initialCourses, initialCategories }: Prop
             <nav className="footer-links">
               <div className="footer-column">
                 <h4>Explore</h4>
-                <a href="/tech/courses">Courses</a>
-                <a href="/tech/about">About</a>
-                <a href="/tech/contact">Contact</a>
-                <a href="/tech/blog">Blog</a>
+                <Link href="/tech/courses">Courses</Link>
+                <Link href="/about">About</Link>
+                <Link href="/contact">Contact</Link>
+                <Link href="/blog">Blog</Link>
               </div>
               <div className="footer-column">
                 <h4>Legal</h4>
-                <a href="/tech/privacy">Privacy Policy</a>
-                <a href="/tech/terms">Terms of Service</a>
-                <a href="/tech/cookies">Cookie Policy</a>
+                <Link href="/privacy">Privacy Policy</Link>
+                <Link href="/terms">Terms of Service</Link>
+                <Link href="/privacy">Cookie Policy</Link>
               </div>
               <div className="footer-column">
                 <h4>Connect</h4>

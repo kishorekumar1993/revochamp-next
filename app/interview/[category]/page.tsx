@@ -136,7 +136,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title,
         description,
         url: `https://revochamp.site/interview/${categorySlug}`,
-        images: [`https://revochamp.site/og-images/mock-interview/${categorySlug}.png`],
+        images: [`https://revochamp.site/mock-interview-og.png`],
         type: 'website',
       },
       twitter: {
@@ -145,7 +145,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         creator: '@revochamp',
         title,
         description,
-        images: [`https://revochamp.site/og-images/mock-interview/${categorySlug}.png`],
+        images: [`https://revochamp.site/mock-interview-og.png`],
       },
       robots: 'index, follow',
       alternates: { canonical: `https://revochamp.site/interview/${categorySlug}` },

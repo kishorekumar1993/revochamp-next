@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const post = await fetchBlogBySlug(slug);
     const description = extractDescription(post);
     const imageUrl =
-      post.featuredImage || "https://revochamp.site/blog/og-default.jpg";
+      post.featuredImage || "https://revochamp.site/og-default.png";
     return {
       title: `${post.title}`,
       description,
