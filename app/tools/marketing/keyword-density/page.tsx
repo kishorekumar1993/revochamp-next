@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: ["https://revochamp.site/og-keyword-density.png"],
   },
   alternates: {
-    canonical: "/tools/marketing/keyword-density",
+    canonical: "https://revochamp.site/tools/marketing/keyword-density",
   },
 };
 

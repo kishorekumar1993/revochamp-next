@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Free health calculators and trackers for fertility, pregnancy, baby care, and postpartum. Period tracker, ovulation calculator, due date, baby sleep, and more.",
 
   alternates: {
-    canonical: "https://revochamp.site/tools/health/",
+    canonical: "https://revochamp.site/tools/health",
   },
 
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Health Tools for Pregnancy & Parenting | Revochamp",
     description:
       "Discover free, evidence-based tools to support your journey from fertility to parenthood.",
-    url: "https://revochamp.site/tools/health/",
+    url: "https://revochamp.site/tools/health",
     siteName: "Revochamp",
     images: [
       {

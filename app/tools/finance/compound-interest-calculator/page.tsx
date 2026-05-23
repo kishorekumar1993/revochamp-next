@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://revochamp.site/tools/compound-interest-calculator",
   },
   alternates: {
-    canonical: "https://revochamp.site/tools/compound-interest-calculator",
+    canonical: "https://revochamp.site/tools/finance/compound-interest-calculator",
   },
   robots: {
     index: true,

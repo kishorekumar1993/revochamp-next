@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: '/tools/qr-generator',
+    canonical: '/tools/tech/qr-generator',
   },
 };
 

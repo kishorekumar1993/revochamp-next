@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact RevoChamp',
     description: 'Official contact page for RevoChamp support and help.',
-    url: 'https://revochamp.site/tech/contact',
-    images: ['https://revochamp.site/tech/contact-og.png'],
+    url: 'https://revochamp.site/contact',
+    images: ['https://revochamp.site/contact-og.png'],
     type: 'website',
   },
   twitter: {
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     creator: '@revochamp',
     title: 'Contact RevoChamp',
     description: 'Official contact page for RevoChamp support and help.',
-    images: ['https://revochamp.site/tech/contact-og.png'],
+    images: ['https://revochamp.site/contact-og.png'],
   },
   robots: 'index, follow, max-image-preview:large',
   alternates: {
-    canonical: 'https://revochamp.site/tech/contact',
+    canonical: 'https://revochamp.site/contact',
   },
 };
 

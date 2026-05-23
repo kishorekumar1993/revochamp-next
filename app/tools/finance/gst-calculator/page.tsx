@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://revochamp.site/tools/gst-calculator",
   },
   alternates: {
-    canonical: "https://revochamp.site/tools/gst-calculator",
+    canonical: "https://revochamp.site/tools/finance/gst-calculator",
   },
   robots: {
     index: true,

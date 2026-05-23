@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy | RevoChamp',
     description: 'Read RevoChamp privacy policy to understand how we collect, use, and protect your data.',
-    url: 'https://revochamp.site/tech/privacy',
-    images: ['https://revochamp.site/tech/privacy-og.png'],
+    url: 'https://revochamp.site/privacy',
+    images: ['https://revochamp.site/privacy-og.png'],
     type: 'website',
   },
   twitter: {
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     creator: '@revochamp',
     title: 'Privacy Policy | RevoChamp',
     description: 'Read RevoChamp privacy policy to understand how we collect, use, and protect your data.',
-    images: ['https://revochamp.site/tech/privacy-og.png'],
+    images: ['https://revochamp.site/privacy-og.png'],
   },
   robots: 'index, follow, max-image-preview:large',
   alternates: {
-    canonical: 'https://revochamp.site/tech/privacy',
+    canonical: 'https://revochamp.site/privacy',
   },
   keywords: [
     'privacy policy RevoChamp',

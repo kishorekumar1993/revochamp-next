@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://revochamp.site/tools/car-loan-calculator",
   },
   alternates: {
-    canonical: "https://revochamp.site/tools/car-loan-calculator",
+    canonical: "https://revochamp.site/tools/finance/car-loan-calculator",
   },
   robots: {
     index: true,

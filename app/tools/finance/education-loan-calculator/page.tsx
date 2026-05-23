@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://revochamp.site/tools/education-loan-calculator",
   },
   alternates: {
-    canonical: "https://revochamp.site/tools/education-loan-calculator",
+    canonical: "https://revochamp.site/tools/finance/education-loan-calculator",
   },
   robots: {
     index: true,

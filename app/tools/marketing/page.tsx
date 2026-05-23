@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ["https://revochamp.site/og-marketing-tools.png"],
   },
   alternates: {
-    canonical: "/tools/marketing",
+    canonical: "https://revochamp.site/tools/marketing",
   },
 };
 

@@ -40,8 +40,8 @@ export default function StructuredData({ session, category, slug }: Props) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://revochamp.site' },
-      { '@type': 'ListItem', position: 2, name: 'Mock Interview', item: 'https://revochamp.site/tech/mock-interview' },
-      { '@type': 'ListItem', position: 3, name: category, item: `https://revochamp.site/tech/mock-interview/${category}` },
+      { '@type': 'ListItem', position: 2, name: 'Mock Interview', item: 'https://revochamp.site/interview' },
+      { '@type': 'ListItem', position: 3, name: category, item: `https://revochamp.site/interview/${category}` },
       { '@type': 'ListItem', position: 4, name: session.title, item: `https://revochamp.site/interview/${category}/${slug}` },
     ],
   };

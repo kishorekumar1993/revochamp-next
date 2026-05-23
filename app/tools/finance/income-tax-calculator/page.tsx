@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://revochamp.site/tools/income-tax-calculator",
   },
   alternates: {
-    canonical: "https://revochamp.site/tools/income-tax-calculator",
+    canonical: "https://revochamp.site/tools/finance/income-tax-calculator",
   },
   robots: {
     index: true,

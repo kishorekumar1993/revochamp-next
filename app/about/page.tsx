@@ -11,9 +11,12 @@ export const metadata: Metadata = {
     title: 'About RevoChamp',
     description: 'Free tech education for everyone.',
     url: 'https://revochamp.site/about',
-    images: ['https://revochamp.site/tech/about-og.png'],
+    images: ['https://revochamp.site/about-og.png'],
   },
   robots: 'index, follow, max-image-preview:large',
+  alternates: {
+    canonical: 'https://revochamp.site/about',
+  },
 };
 
 export default function AboutPage() {

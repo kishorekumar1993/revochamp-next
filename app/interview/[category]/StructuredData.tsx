@@ -9,7 +9,7 @@ interface Props {
 
 export default function StructuredData({ category, topics, config }: Props) {
   const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1);
-  const canonicalUrl = `https://revochamp.site/mock-interview/${category}`;
+  const canonicalUrl = `https://revochamp.site/interview/${category}`;
   
   const faqs = [
     {

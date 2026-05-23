@@ -45,7 +45,7 @@ export default function TestIntro({ session, category, onStart }: Props) {
             className="flex items-center justify-between"
           >
             <Link
-              href="/tech/mock-interview"
+              href="/interview"
               className="group p-2 sm:p-2.5 bg-white/15 backdrop-blur-sm rounded-xl hover:bg-white/25 transition-all duration-200"
             >
               <svg

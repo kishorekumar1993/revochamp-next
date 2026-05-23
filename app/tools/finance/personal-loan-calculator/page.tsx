@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://revochamp.site/tools/personal-loan-calculator",
   },
   alternates: {
-    canonical: "https://revochamp.site/tools/personal-loan-calculator",
+    canonical: "https://revochamp.site/tools/finance/personal-loan-calculator",
   },
   robots: {
     index: true,

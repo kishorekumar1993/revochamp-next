@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "IVF success predictor, IVF success rate calculator, IVF chances, fertility treatment, IVF outcome estimator",
   authors: [{ name: "Revochamp" }],
   alternates: {
-    canonical: "https://revochamp.com/tools/health/ivf-success-predictor",
+    canonical: "https://revochamp.site/tools/health/ivf-prediction",
   },
   robots: {
     index: true,
@@ -34,11 +34,11 @@ export const metadata: Metadata = {
       "Personalized IVF success estimate based on key medical factors. Free and anonymous.",
     type: "website",
     locale: "en_US",
-    url: "https://revochamp.com/tools/health/ivf-success-predictor",
+    url: "https://revochamp.site/tools/health/ivf-prediction",
     siteName: "Revochamp",
     images: [
       {
-        url: "https://revochamp.com/og/ivf-predictor.jpg",
+        url: "https://revochamp.site/tools/health/og-fertility.png",
         width: 1200,
         height: 630,
         alt: "IVF Success Predictor – Estimate Your Chances",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "IVF Success Predictor | Revochamp",
     description:
       "Estimate your IVF success rate using clinically‑relevant parameters.",
-    images: ["https://revochamp.com/og/ivf-predictor-twitter.jpg"],
+    images: ["https://revochamp.site/tools/health/og-fertility.png"],
   },
 };
 
@@ -61,16 +61,16 @@ export default function Page() {
     name: "IVF Success Predictor",
     description:
       "Estimate your likelihood of a successful IVF cycle based on age, BMI, previous IVF attempts, and embryo quality.",
-    url: "https://revochamp.com/tools/health/ivf-success-predictor",
+    url: "https://revochamp.site/tools/health/ivf-prediction",
     medicalSpecialty: "Fertility",
-    usageInfo: "https://revochamp.com/tools/health/ivf-success-predictor",
+    usageInfo: "https://revochamp.site/tools/health/ivf-prediction",
     about: {
       "@type": "Thing",
       name: "IVF success rate",
     },
     potentialAction: {
       "@type": "UseAction",
-      target: "https://revochamp.com/tools/health/ivf-success-predictor",
+      target: "https://revochamp.site/tools/health/ivf-prediction",
     },
     mainEntity: {
       "@type": "WebApplication",

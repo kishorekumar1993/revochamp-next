@@ -135,7 +135,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       openGraph: {
         title,
         description,
-        url: `https://revochamp.site/tech/mock-interview/${categorySlug}`,
+        url: `https://revochamp.site/interview/${categorySlug}`,
         images: [`https://revochamp.site/og-images/mock-interview/${categorySlug}.png`],
         type: 'website',
       },
@@ -148,7 +148,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         images: [`https://revochamp.site/og-images/mock-interview/${categorySlug}.png`],
       },
       robots: 'index, follow',
-      alternates: { canonical: `https://revochamp.site/tech/mock-interview/${categorySlug}` },
+      alternates: { canonical: `https://revochamp.site/interview/${categorySlug}` },
     };
   } catch {
     // ✅ Improved fallback metadata

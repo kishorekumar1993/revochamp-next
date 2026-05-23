@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Mock Interviews | RevoChamp',
     description: 'Practice real technical interviews and land your dream job.',
-    url: 'https://revochamp.site/tech/mock-interview',
-    images: ['https://revochamp.site/tech/mock-interview-og.png'],
+    url: 'https://revochamp.site/interview',
+    images: ['https://revochamp.site/mock-interview-og.png'],
     type: 'website',
   },
   twitter: {
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     creator: '@revochamp',
     title: 'Mock Interviews | RevoChamp',
     description: 'Practice real technical interviews and land your dream job.',
-    images: ['https://revochamp.site/tech/mock-interview-og.png'],
+    images: ['https://revochamp.site/mock-interview-og.png'],
   },
   robots: 'index, follow, max-image-preview:large',
   alternates: {
-    canonical: 'https://revochamp.site/tech/mock-interview',
+    canonical: 'https://revochamp.site/interview',
   },
   keywords: [
     'mock interview',
