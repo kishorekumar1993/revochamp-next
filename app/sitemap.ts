@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { getAllBlogSlugs } from '@/lib/blog-detail-service'
 
 // ✅ Required for static export
 export const dynamic = 'force-static'
@@ -145,6 +146,46 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           priority: 0.8,
         });
       });
+
+      // 4. Fetch dynamic mock interview test pages (detailed tests per category)
+      const interviewTestsPromises = courses.map(async (course: any) => {
+        const slug = course.slug;
+        try {
+          const mockRes = await fetch(`https://json.revochamp.site/mockinterview/${slug}/topics.json`);
+          if (mockRes.ok) {
+            const mockData = await mockRes.json();
+            return mockData.map((topic: any) => ({
+              url: `${baseUrl}/interview/${slug}/${topic.slug}`,
+              lastModified: now,
+              changeFrequency: 'weekly',
+              priority: 0.7,
+            }));
+          }
+        } catch (e) {
+          // ignore
+        }
+        return [];
+      });
+
+      const allInterviewTestsResults = await Promise.all(interviewTestsPromises);
+      allInterviewTestsResults.forEach((testsList) => {
+        dynamicItems = dynamicItems.concat(testsList);
+      });
+
+      // 5. Fetch all dynamic blog posts
+      try {
+        const blogSlugs = await getAllBlogSlugs();
+        blogSlugs.forEach((slug: string) => {
+          dynamicItems.push({
+            url: `${baseUrl}/blog/${slug}`,
+            lastModified: now,
+            changeFrequency: 'weekly',
+            priority: 0.8,
+          });
+        });
+      } catch (blogErr) {
+        console.error('Error fetching blog slugs for sitemap:', blogErr);
+      }
     }
   } catch (err) {
     console.error('Error generating dynamic sitemap:', err);
